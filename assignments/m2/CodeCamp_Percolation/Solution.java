@@ -127,11 +127,11 @@ class Percolation {
     }
     // is site (row, col) full?
     public boolean isFull(int row, int col) {
-        //if (isOpen(row, col)) {
+        if (isOpen(size-1, col - (size*(size-1)))) {
             if (uf.connected(row, col)) {
                 return true;
             }
-        //}
+        }
         return false;
     }
     // number of open sites
