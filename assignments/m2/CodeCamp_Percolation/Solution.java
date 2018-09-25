@@ -26,9 +26,6 @@ class WeightedQuickUnionUF {
             size[i] = 1;
         }
     }
-    public int count() {
-        return count;
-    }
     public int root(int p) {
         while (p != parent[p])
             p = parent[p];
@@ -118,10 +115,18 @@ class Percolation {
     }
     // does the system percolate?
     public boolean percolates(){
-    	for(int i=0;i<size;i++){
-      		if(isFull(i,size-1)){
-      			return true;
-      		}
+    	// for(int i=0;i<size;i++){
+    	// 	for(int j = 0; j < size; j++){
+     //  			if(isFull(i,j)){
+     //  				return true;
+     //  			}
+     //  		}
+    	// }
+    	// return false;
+    	for (int i = 0;i < size; i++ ) {
+    		if(isFull(size-1,i)){
+    			return true;
+    		}
     	}
     	return false;
     }
