@@ -66,24 +66,23 @@ class Percolation {
     }
     //connect adjacents.
     void connectadjacents(int x, int y){
-    	int s1 = (size * size) - 1;
     	int s = x+(y*size);
-        if((s +1<s1)&&(x<size-1)){
+        if((s +1<s)&&(x<size-1)){//right 1
           if(this.isOpen(x+1,y)){
             this.uf.union(s,s+1);
           }
         }
-        if((s-1>0)&&(x>0)){
+        if((s-1>0)&&(x>0)){//left 1
           if(this.isOpen(x-1,y)){
             this.uf.union(s,s-1);
           }
         }
-        if((s-size>0)&&(y-1>0)){
+        if((s-size>0)&&(y-1>0)){//up 1
           if(this.isOpen(x,y-1)){
             this.uf.union(s,s-size);
           }
         }
-        if((s + size < s1)&&(y+1<=size)){
+        if((s + size < s)&&(y+1<=size)){//down 1
           if((this.isOpen(x,y+1))){
             this.uf.union(s,s+size);
           }
@@ -104,7 +103,7 @@ class Percolation {
     // is site (row, col) full?
     public boolean isFull(int row, int col){
     	if(isOpen(row,col)){
-        	if(uf.connected(0,((row*size)+col))){
+        	if(uf.connected((col+(row*size)),((col +1)*size))){
         		return true;
         	}
     	}
@@ -116,8 +115,16 @@ class Percolation {
     }
     // does the system percolate?
     public boolean percolates(){
+    	// for(int i=0;i<size;i++){
+    	// 	for(int j = 0; j < size; j++){
+     //  			if(isFull(i,j)){
+     //  				return true;
+     //  			}
+     //  		}
+    	// }
+    	// return false;
     	for (int i = 0;i < size; i++ ) {
-    		if(isFull(size*(size-1),i)){
+    		if(isFull(size-1,i)){
     			return true;
     		}
     	}
@@ -134,9 +141,14 @@ public final class Solution{
 	 	int n = sc.nextInt();
 	 	Percolation p = new Percolation(n);
 	 	while(sc.hasNext()){
+	 		// String[] input = sc.nextLine().split("\s");
 	 		int r = sc.nextInt();
 	 		int c = sc.nextInt();
+
+	 		// int c = Integer.parseInt(input[1]);
 	 		p.open(r-1, c-1);
+	 		//System.out.println(p.numberOfOpenSites());
+	 		
 	 	}
 	 	System.out.println(p.percolates());
 	 }
