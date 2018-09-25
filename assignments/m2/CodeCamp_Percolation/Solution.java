@@ -52,119 +52,58 @@ class WeightedQuickUnionUF {
 }
 
 class Percolation {
-    int[][] grid;
-    int opencount;
-    int size;
-    WeightedQuickUnionUF uf;
-    // create n-by-n grid, with all sites blocked
+    private boolean[][] grid;
+    private int top = 0;
+    private int bottom;
+    private int size;
+    private WeightedQuickUnionUF uf;
+    private int opencount = 0;
     public Percolation(int n) {
-        uf = new WeightedQuickUnionUF((n * n) + 1);
-        grid = new int[n][n];
-        opencount = 0;
         size = n;
+        bottom = (n * n) + 1;
+        uf = new WeightedQuickUnionUF((n * n) + 2);
+        grid = new boolean[n][n];
     }
-    //connect adjacents.
-    void connectadjacents(int row, int col) {
-        int total = size * size - 1;
-        int s = (row * size) + col;
-        if ((s + 1 < total) && (col < size - 1)) {
-            if (this.isOpen(row, col + 1)) {
-                this.uf.union(s, s + 1);
-            }
-        }
-        if ((s - 1 > 0) && (col > 0)) {
-            if (this.isOpen(row, col - 1)) {
-                this.uf.union(s, s - 1);
-            }
-        }
-        if ((s - size > 0) && (row - 1 > 0)) {
-            if (this.isOpen(row-1, col)) {
-                this.uf.union(s-size, s);
-            }
-        }
-        if ((s + size < total) && (row + 1 <= size)) {
-            if ((this.isOpen(row + 1, col))) {
-                this.uf.union(s + size, s);
-            }
-        }
-    } 
-    // void connectadjacents(int x, int y) {
-    //     int total = size * size - 1;
-    //     int s = x + (y * size);
-    //     if ((s + 1 < total) && (x < size - 1)) {
-    //         if (this.isOpen(x + 1, y)) {
-    //             this.uf.union(s, s + 1);
-    //         }
-    //     }
-    //     if ((s - 1 > 0) && (x > 0)) {
-    //         if (this.isOpen(x - 1, y)) {
-    //             this.uf.union(s, s - 1);
-    //         }
-    //     }
-    //     if ((s - size > 0) && (y - 1 > 0)) {
-    //         if (this.isOpen(x, y - 1)) {
-    //             this.uf.union(s, s - size);
-    //         }
-    //     }
-    //     if ((s + size < total) && (y + 1 <= size)) {
-    //         if ((this.isOpen(x, y + 1))) {
-    //             this.uf.union(s, s + size);
-    //         }
-    //     }
-    // }
-    // open site (row, col) if it is not open already
     public void open(int row, int col) {
         if (!isOpen(row, col)) {
-            grid[row][col] = 1;
+            grid[row - 1][col - 1] = true;
             opencount++;
-            connectadjacents(row, col);
-            //System.out.println(Arrays.deepToString(grid));
+        }
+        if (row == 1) {
+            uf.union(getIndex(row, col), top);
+        }
+        if (row == size) {
+            uf.union(getIndex(row, col), bottom);
+        }
+        if (col > 1 && isOpen(row, col - 1)) {
+            uf.union(getIndex(row, col), getIndex(row, col - 1));
+        }
+        if (col < size && isOpen(row, col + 1)) {
+            uf.union(getIndex(row, col), getIndex(row, col + 1));
+        }
+        if (row > 1 && isOpen(row - 1, col)) {
+            uf.union(getIndex(row, col), getIndex(row - 1, col));
+        }
+        if (row < size && isOpen(row + 1, col)) {
+            uf.union(getIndex(row, col), getIndex(row + 1, col));
         }
     }
-    // is site (row, col) open?
     public boolean isOpen(int row, int col) {
-        return grid[row][col] == 1;
+        return grid[row - 1][col - 1];
     }
-    // is site (row, col) full?
     public boolean isFull(int row, int col) {
-        if (isOpen(size-1, col - (size*(size-1)))) {
-            if (uf.connected(row, col)) {
-                return true;
-            }
+        if (0 < row && row <= size && 0 < col && col <= size) {
+            return uf.connected(top, getIndex(row, col));
         }
         return false;
     }
-    // number of open sites
     public int numberOfOpenSites() {
         return opencount;
     }
-    // does the system percolate?
     public boolean percolates() {
-        for(int k = 0; k < size; k++){
-            for (int i = 0; i < size; i++ ) {
-                if (isFull(k, (size * (size - 1)) + i)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return uf.connected(top, bottom);
     }
-}
-
-public final class Solution {
-    private Solution() {
-        //constructor.
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        Percolation p = new Percolation(n);
-        while (sc.hasNext()) {
-            int r = sc.nextInt();
-            int c = sc.nextInt();
-            p.open(r - 1, c - 1);
-        }
-        //System.out.println(Arrays.deepToString(p.grid));
-        System.out.println(p.percolates());
+    private int getIndex(int row, int col) {
+        return size * (row - 1) + col;
     }
 }
