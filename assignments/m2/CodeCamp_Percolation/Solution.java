@@ -64,30 +64,54 @@ class Percolation {
         size = n;
     }
     //connect adjacents.
-    void connectadjacents(int x, int y) {
+    void connectadjacents(int row, int col) {
         int total = size * size - 1;
-        int s = x + (y * size);
-        if ((s + 1 < total) && (x < size - 1)) {
-            if (this.isOpen(x + 1, y)) {
+        int s = (row * size) + col;
+        if ((s + 1 < total) && (col < size - 1)) {
+            if (this.isOpen(row, col + 1)) {
                 this.uf.union(s, s + 1);
             }
         }
-        if ((s - 1 > 0) && (x > 0)) {
-            if (this.isOpen(x - 1, y)) {
+        if ((s - 1 > 0) && (col > 0)) {
+            if (this.isOpen(row, col - 1)) {
                 this.uf.union(s, s - 1);
             }
         }
-        if ((s - size > 0) && (y - 1 > 0)) {
-            if (this.isOpen(x, y - 1)) {
-                this.uf.union(s, s - size);
+        if ((s - size > 0) && (row - 1 > 0)) {
+            if (this.isOpen(row-1, col)) {
+                this.uf.union(s-size, s);
             }
         }
-        if ((s + size < total) && (y + 1 <= size)) {
-            if ((this.isOpen(x, y + 1))) {
-                this.uf.union(s, s + size);
+        if ((s + size < total) && (row + 1 <= size)) {
+            if ((this.isOpen(row + 1, col))) {
+                this.uf.union(s + size, s);
             }
         }
-    }
+    } 
+    // void connectadjacents(int x, int y) {
+    //     int total = size * size - 1;
+    //     int s = x + (y * size);
+    //     if ((s + 1 < total) && (x < size - 1)) {
+    //         if (this.isOpen(x + 1, y)) {
+    //             this.uf.union(s, s + 1);
+    //         }
+    //     }
+    //     if ((s - 1 > 0) && (x > 0)) {
+    //         if (this.isOpen(x - 1, y)) {
+    //             this.uf.union(s, s - 1);
+    //         }
+    //     }
+    //     if ((s - size > 0) && (y - 1 > 0)) {
+    //         if (this.isOpen(x, y - 1)) {
+    //             this.uf.union(s, s - size);
+    //         }
+    //     }
+    //     if ((s + size < total) && (y + 1 <= size)) {
+    //         if ((this.isOpen(x, y + 1))) {
+    //             this.uf.union(s, s + size);
+    //         }
+    //     }
+    // }
     // open site (row, col) if it is not open already
     public void open(int row, int col) {
         if (!isOpen(row, col)) {
@@ -140,6 +164,7 @@ public final class Solution {
             int c = sc.nextInt();
             p.open(r - 1, c - 1);
         }
+        //System.out.println(Arrays.deepToString(p.grid));
         System.out.println(p.percolates());
     }
 }
