@@ -36,11 +36,12 @@ class WeightedQuickUnionUF {
      *
      * @return     { description_of_the_return_value }
      */
-    public int root(int p) {
-        while (p != parent[p]){
-            p = parent[p];
+    public int root(final int p) {
+        int q = p;
+        while (q != parent[q]) {
+            q = parent[q];
         }
-        return p;
+        return q;
     }
     /**
      * connected.
@@ -62,7 +63,7 @@ class WeightedQuickUnionUF {
     public void union(final int p, final int q) {
         int rootP = root(p);
         int rootQ = root(q);
-        if (rootP == rootQ){
+        if (rootP == rootQ) {
             return;
         }
         // make smaller root point to larger one
