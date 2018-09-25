@@ -136,10 +136,12 @@ public final class Solution{
 	 	int n = sc.nextInt();
 	 	Percolation p = new Percolation(n);
 	 	while(sc.hasNext()){
-	 		String[] input = sc.nextLine().split(" ");
-	 		int r = Integer.parseInt(input[0]);
-	 		int c = Integer.parseInt(input[1]);
-	 		p.open(r, c);
+	 		// String[] input = sc.nextLine().split("\s");
+	 		int r = sc.nextInt();
+	 		int c = sc.nextInt();
+
+	 		// int c = Integer.parseInt(input[1]);
+	 		p.open(r-1, c-1);
 	 	}
 	 	System.out.println(p.percolates());
 	 }
