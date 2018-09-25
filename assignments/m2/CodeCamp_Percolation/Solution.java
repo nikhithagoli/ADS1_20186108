@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.*;
 
 // public class Percolation {
 //    public Percolation(int n)                // create n-by-n grid, with all sites blocked
@@ -136,7 +137,9 @@ public final class Solution{
 	 	Percolation p = new Percolation(n);
 	 	while(sc.hasNext()){
 	 		String[] input = sc.nextLine().split(" ");
-	 		p.open(Integer.parseInt(input[0])-1, Integer.parseInt(input[1])-1);
+	 		int r = Integer.parseInt(input[0]);
+	 		int c = Integer.parseInt(input[1]);
+	 		p.open(r - 1, c-1);
 	 	}
 	 	System.out.println(p.percolates());
 	 }
