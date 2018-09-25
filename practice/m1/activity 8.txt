@@ -1,0 +1,1 @@
+Weighted quick union Path compression is the best one for the given problem as its complexity is of logarithm, we can complete all the operations with only few array access.
