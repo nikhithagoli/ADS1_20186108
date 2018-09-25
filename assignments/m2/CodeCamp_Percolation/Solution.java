@@ -1,16 +1,4 @@
 import java.util.Scanner;
-
-// public class Percolation {
-//    public Percolation(int n)                // create n-by-n grid, with all sites blocked
-//    public    void open(int row, int col)    // open site (row, col) if it is not open already
-//    public boolean isOpen(int row, int col)  // is site (row, col) open?
-//    public boolean isFull(int row, int col)  // is site (row, col) full?
-//    public     int numberOfOpenSites()       // number of open sites
-//    public boolean percolates()              // does the system percolate?
-// }
-
-
-// You can implement the above API to solve the problem
 /**
 union find class.
 */
@@ -32,7 +20,7 @@ class WeightedQuickUnionUF {
      *
      * @param      n     { parameter_description }
      */
-    public WeightedQuickUnionUF(final int n) {
+    WeightedQuickUnionUF(final int n) {
         count = n;
         parent = new int[n];
         size = new int[n];
@@ -49,8 +37,9 @@ class WeightedQuickUnionUF {
      * @return     { description_of_the_return_value }
      */
     public int root(int p) {
-        while (p != parent[p])
+        while (p != parent[p]){
             p = parent[p];
+        }
         return p;
     }
     /**
@@ -73,8 +62,9 @@ class WeightedQuickUnionUF {
     public void union(final int p, final int q) {
         int rootP = root(p);
         int rootQ = root(q);
-        if (rootP == rootQ) return;
-
+        if (rootP == rootQ){
+            return;
+        }
         // make smaller root point to larger one
         if (size[rootP] < size[rootQ]) {
             parent[rootP] = rootQ;
@@ -119,7 +109,7 @@ class Percolation {
      *
      * @param      n     { parameter_description }
      */
-    public Percolation(int n) {
+    Percolation(final int n) {
         size = n;
         bottom = (n * n) + 1;
         uf = new WeightedQuickUnionUF((n * n) + 2);
@@ -218,6 +208,11 @@ public final class Solution {
     private Solution() {
         //constructor.
     }
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
