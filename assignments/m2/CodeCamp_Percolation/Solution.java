@@ -66,24 +66,24 @@ class Percolation {
     //connect adjacents.
     void connectadjacents(int x, int y) {
         int total = size * size - 1;
-        int s = y + (x * size);
-        if ((s + 1 < total) && (y < size - 1)) {
-            if (this.isOpen(y + 1, x)) {
+        int s = x + (y * size);
+        if ((s + 1 < total) && (x < size - 1)) {
+            if (this.isOpen(x + 1, y)) {
                 this.uf.union(s, s + 1);
             }
         }
-        if ((s - 1 > 0) && (y > 0)) {
-            if (this.isOpen(y - 1, x)) {
+        if ((s - 1 > 0) && (x > 0)) {
+            if (this.isOpen(x - 1, y)) {
                 this.uf.union(s, s - 1);
             }
         }
-        if ((s - size > 0) && (x - 1 > 0)) {
-            if (this.isOpen(y, x - 1)) {
+        if ((s - size > 0) && (y - 1 > 0)) {
+            if (this.isOpen(x, y - 1)) {
                 this.uf.union(s, s - size);
             }
         }
-        if ((s + size < total) && (x + 1 <= size)) {
-            if ((this.isOpen(y, x + 1))) {
+        if ((s + size < total) && (y + 1 <= size)) {
+            if ((this.isOpen(x, y + 1))) {
                 this.uf.union(s, s + size);
             }
         }
