@@ -107,3 +107,21 @@ class Percolation {
         return size * (row - 1) + col;
     }
 }
+
+public final class Solution {
+    private Solution() {
+        //constructor.
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Percolation p = new Percolation(n);
+        while (sc.hasNext()) {
+            int r = sc.nextInt();
+            int c = sc.nextInt();
+            p.open(r - 1, c - 1);
+        }
+        //System.out.println(Arrays.deepToString(p.grid));
+        System.out.println(p.percolates());
+    }
+}
