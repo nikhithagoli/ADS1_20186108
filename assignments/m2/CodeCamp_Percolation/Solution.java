@@ -32,7 +32,7 @@ class WeightedQuickUnionUF {
      *
      * @param      n     { parameter_description }
      */
-    public WeightedQuickUnionUF(int n) {
+    public WeightedQuickUnionUF(final int n) {
         count = n;
         parent = new int[n];
         size = new int[n];
@@ -61,7 +61,7 @@ class WeightedQuickUnionUF {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean connected(int p, int q) {
+    public boolean connected(final int p, final int q) {
         return root(p) == root(q);
     }
     /**
@@ -70,7 +70,7 @@ class WeightedQuickUnionUF {
      * @param      p     { parameter_description }
      * @param      q     The quarter
      */
-    public void union(int p, int q) {
+    public void union(final int p, final int q) {
         int rootP = root(p);
         int rootQ = root(q);
         if (rootP == rootQ) return;
@@ -131,7 +131,7 @@ class Percolation {
      * @param      row   The row
      * @param      col   The col
      */
-    public void open(int row, int col) {
+    public void open(final int row, final int col) {
         if (!isOpen(row, col)) {
             grid[row - 1][col - 1] = true;
             opencount++;
@@ -163,7 +163,7 @@ class Percolation {
      *
      * @return     True if open, False otherwise.
      */
-    public boolean isOpen(int row, int col) {
+    public boolean isOpen(final int row, final int col) {
         return grid[row - 1][col - 1];
     }
     /**
@@ -174,7 +174,7 @@ class Percolation {
      *
      * @return     True if full, False otherwise.
      */
-    public boolean isFull(int row, int col) {
+    public boolean isFull(final int row, final int col) {
         if (0 < row && row <= size && 0 < col && col <= size) {
             return uf.connected(top, getIndex(row, col));
         }
@@ -204,7 +204,7 @@ class Percolation {
      *
      * @return     The index.
      */
-    private int getIndex(int row, int col) {
+    private int getIndex(final int row, final int col) {
         return size * (row - 1) + col;
     }
 }
@@ -218,7 +218,7 @@ public final class Solution {
     private Solution() {
         //constructor.
     }
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         Percolation p = new Percolation(n);
