@@ -139,7 +139,7 @@ public final class Solution{
 	 		String[] input = sc.nextLine().split(" ");
 	 		int r = Integer.parseInt(input[0]);
 	 		int c = Integer.parseInt(input[1]);
-	 		p.open(r - 1, c-1);
+	 		p.open(r, c);
 	 	}
 	 	System.out.println(p.percolates());
 	 }
