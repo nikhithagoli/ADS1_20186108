@@ -138,6 +138,6 @@ public final class Solution {
             int c = sc.nextInt();
             p.open(r - 1, c - 1);
         }
-        //System.out.println(p.percolates());
+        System.out.println(p.percolates());
     }
 }
