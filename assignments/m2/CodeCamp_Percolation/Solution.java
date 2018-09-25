@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 // public class Percolation {
 //    public Percolation(int n)                // create n-by-n grid, with all sites blocked
@@ -12,11 +11,27 @@ import java.util.Arrays;
 
 
 // You can implement the above API to solve the problem
-
+/**
+union find class.
+*/
 class WeightedQuickUnionUF {
+    /**
+     * parent.
+     */
     private int[] parent;
+    /**
+     * size array.
+     */
     private int[] size;
+    /**
+     * count.
+     */
     private int count;
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     */
     public WeightedQuickUnionUF(int n) {
         count = n;
         parent = new int[n];
@@ -26,14 +41,35 @@ class WeightedQuickUnionUF {
             size[i] = 1;
         }
     }
+    /**
+     * finds root.
+     *
+     * @param      p     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int root(int p) {
         while (p != parent[p])
             p = parent[p];
         return p;
     }
+    /**
+     * connected.
+     *
+     * @param      p     { parameter_description }
+     * @param      q     The quarter
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean connected(int p, int q) {
         return root(p) == root(q);
     }
+    /**
+     * union.
+     *
+     * @param      p     { parameter_description }
+     * @param      q     The quarter
+     */
     public void union(int p, int q) {
         int rootP = root(p);
         int rootQ = root(q);
@@ -50,20 +86,51 @@ class WeightedQuickUnionUF {
         count--;
     }
 }
-
+/**
+ * Class for percolation.
+ */
 class Percolation {
+    /**
+     * grid.
+     */
     private boolean[][] grid;
+    /**
+     * top.
+     */
     private int top = 0;
+    /**
+     * bottom.
+     */
     private int bottom;
+    /**
+     * size.
+     */
     private int size;
+    /**
+     * uf object.
+     */
     private WeightedQuickUnionUF uf;
+    /**
+     * open count.
+     */
     private int opencount = 0;
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     */
     public Percolation(int n) {
         size = n;
         bottom = (n * n) + 1;
         uf = new WeightedQuickUnionUF((n * n) + 2);
         grid = new boolean[n][n];
     }
+    /**
+     * open.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     */
     public void open(int row, int col) {
         if (!isOpen(row, col)) {
             grid[row - 1][col - 1] = true;
@@ -88,27 +155,66 @@ class Percolation {
             uf.union(getIndex(row, col), getIndex(row + 1, col));
         }
     }
+    /**
+     * Determines if open.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     *
+     * @return     True if open, False otherwise.
+     */
     public boolean isOpen(int row, int col) {
         return grid[row - 1][col - 1];
     }
+    /**
+     * Determines if full.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     *
+     * @return     True if full, False otherwise.
+     */
     public boolean isFull(int row, int col) {
         if (0 < row && row <= size && 0 < col && col <= size) {
             return uf.connected(top, getIndex(row, col));
         }
         return false;
     }
+    /**
+     * opensites.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int numberOfOpenSites() {
         return opencount;
     }
+    /**
+     * percolates.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean percolates() {
         return uf.connected(top, bottom);
     }
+    /**
+     * getInex.
+     *
+     * @param      row   The row
+     * @param      col   The col
+     *
+     * @return     The index.
+     */
     private int getIndex(int row, int col) {
         return size * (row - 1) + col;
     }
 }
-
+/**
+ * soluton class.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //constructor.
     }
