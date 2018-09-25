@@ -1,0 +1,143 @@
+import java.util.Scanner;
+
+// public class Percolation {
+//    public Percolation(int n)                // create n-by-n grid, with all sites blocked
+//    public    void open(int row, int col)    // open site (row, col) if it is not open already
+//    public boolean isOpen(int row, int col)  // is site (row, col) open?
+//    public boolean isFull(int row, int col)  // is site (row, col) full?
+//    public     int numberOfOpenSites()       // number of open sites
+//    public boolean percolates()              // does the system percolate?
+// }
+
+
+// You can implement the above API to solve the problem
+
+class WeightedQuickUnionUF {
+    private int[] parent;   // parent[i] = parent of i
+    private int[] size;     // size[i] = number of sites in subtree rooted at i
+    private int count;      // number of components
+    public WeightedQuickUnionUF(int n) {
+        count = n;
+        parent = new int[n];
+        size = new int[n];
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+            size[i] = 1;
+        }
+    }
+    public int count() {
+        return count;
+    }
+    public int root(int p) {
+        while (p != parent[p])
+            p = parent[p];
+        return p;
+    }
+    public boolean connected(int p, int q) {
+        return root(p) == root(q);
+    }
+    public void union(int p, int q) {
+        int rootP = root(p);
+        int rootQ = root(q);
+        if (rootP == rootQ) return;
+
+        // make smaller root point to larger one
+        if (size[rootP] < size[rootQ]) {
+            parent[rootP] = rootQ;
+            size[rootQ] += size[rootP];
+        }
+        else {
+            parent[rootQ] = rootP;
+            size[rootP] += size[rootQ];
+        }
+        count--;
+    }
+}
+
+class Percolation {
+	int[][] grid;
+	int opencount;
+	int size;
+	WeightedQuickUnionUF uf;
+	// create n-by-n grid, with all sites blocked
+    public Percolation(int n) {
+    	uf = new WeightedQuickUnionUF((n*n)+1);
+    	grid = new int[n][n];
+    	opencount = 0;
+    	size = n;
+    }
+    //connect adjacents.
+    void connectadjacents(int x, int y){
+    	int s = x+(y*size);
+        if((s +1<s)&&(x<size-1)){//right 1
+          if(this.isOpen(x+1,y)){
+            this.uf.union(s,s+1);
+          }
+        }
+        if((s-1>0)&&(x>0)){//left 1
+          if(this.isOpen(x-1,y)){
+            this.uf.union(s,s-1);
+          }
+        }
+        if((s-size>0)&&(y-1>0)){//up 1
+          if(this.isOpen(x,y-1)){
+            this.uf.union(s,s-size);
+          }
+        }
+        if((s + size < s)&&(y+1<=size)){//down 1
+          if((this.isOpen(x,y+1))){
+            this.uf.union(s,s+size);
+          }
+        }
+    }
+    // open site (row, col) if it is not open already
+    public void open(int row, int col){
+    	if(!isOpen(row,col)){
+    		grid[row][col] = 1;
+    		opencount++;
+    		connectadjacents(row, col);
+    	}
+    }
+    // is site (row, col) open?
+    public boolean isOpen(int row, int col){
+    	return grid[row][col] == 1;
+    }
+    // is site (row, col) full?
+    public boolean isFull(int row, int col){
+    	if(isOpen(row,col)){
+        	if(uf.connected((row+col*size),(size*size))){
+        		return true;
+        	}
+    	}
+    	return false;
+    }
+    // number of open sites  
+    public int numberOfOpenSites(){
+    	return opencount;
+    }
+    // does the system percolate?
+    public boolean percolates(){
+    	for(int i=0;i<size;i++){
+      		if(isFull(i,size-1)){
+      			return true;
+      		}
+    	}
+    	return false;
+    }
+}
+
+public final class Solution{
+	 private Solution(){
+	 	//constructor.
+	 }
+	 public static void main(String[] args){
+	 	Scanner sc = new Scanner(System.in);
+	 	int n = sc.nextInt();
+	 	Percolation p = new Percolation(n);
+	 	while(sc.hasNext()){
+	 		String[] input = sc.nextLine().split(" ");
+	 		p.open(Integer.parseInt(input[0])-1, Integer.parseInt(input[1])-1);
+	 	}
+	 	System.out.println(p.percolates());
+	 }
+}
