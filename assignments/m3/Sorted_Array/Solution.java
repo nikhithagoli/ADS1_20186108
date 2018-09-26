@@ -7,21 +7,42 @@ public class Solution{
 		sc.nextLine();
 		int[] first = new int[m];
 		int[] second = new int[n];
-		int k = 0;
-		for(String each : sc.nextLine().split(",")){
-			first[k++] = Integer.parseInt(each);
+		int k = 0, i =0, j = 0;
+		String str = "";
+		String[] s;
+		if(m != 0){
+			s = sc.nextLine().split(",");
+			for(String each : s){
+				first[k++] = Integer.parseInt(each);
+			}
+		} else {
+			sc.nextLine();
 		}
 		k = 0;
-		for(String each : sc.nextLine().split(",")){
-			second[k++] = Integer.parseInt(each);
+		if(n != 0){
+			s = sc.nextLine().split(",");
+			for(String each : s){
+				second[k++] = Integer.parseInt(each);
+			}
+		} else{
+			sc.nextLine();
 		}
-		int[] result = new int[m+n];
-		/*for(int i = 0, j = 0; i < m || j < n; i++,j++){
-			result[i] = first[i];
-			result[i+m] = second[j];
+      	while (i < m && j < n) {
+        	if (first[i] < second[j])
+          		str += Integer.toString(first[i++]) + ",";
+        	else if (first[i] > second[j])
+          		str += Integer.toString(second[j++])+",";
+        	else {
+          		str += Integer.toString(second[j++])+",";
+          		i++;
+        	}
 		}
-		for(int i = 0; i<m+n; i++){
-			System.out.print(result[i] + ",");
-		}*/	
+		while(i < m){
+			str += Integer.toString(first[i++]) + ",";
+		}
+		while(j < n){
+			str += Integer.toString(second[j++]) + ",";
+		}
+		System.out.println(str.substring(0,str.length()-1));
 	}
 }
