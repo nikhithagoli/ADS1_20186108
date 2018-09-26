@@ -8,7 +8,7 @@ public class Solution{
 		int[] second = new int[n];
 		int k = 0;
 		for(String each : sc.nextLine().split(",")){
-			first[k++] = Integer.parseInt(each);
+			first[k++] = Integer.parseInt(""+each);
 		}
 		k = 0;
 		for(String each : sc.nextLine().split(",")){
