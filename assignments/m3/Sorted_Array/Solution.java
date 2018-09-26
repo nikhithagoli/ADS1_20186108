@@ -16,9 +16,11 @@ public class Solution{
 		}*/
 		for(int k = 0; k < m; k++){
 			first[k] = sc.nextInt();
+			sc.next();
 		}
 		for(int k = 0; k < m; k++){
 			second[k] = sc.nextInt();
+			sc.next();
 		}
 		int[] result = new int[m+n];
 		for(int i = 0, j = 0; i < m || j < n; i++,j++){
