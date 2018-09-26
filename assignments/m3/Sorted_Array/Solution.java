@@ -16,12 +16,12 @@ public class Solution{
 			second[k++] = Integer.parseInt(each);
 		}
 		int[] result = new int[m+n];
-		for(int i = 0, j = 0; i < m || j < n; i++,j++){
+		/*for(int i = 0, j = 0; i < m || j < n; i++,j++){
 			result[i] = first[i];
 			result[i+m] = second[j];
 		}
 		for(int i = 0; i<m+n; i++){
 			System.out.print(result[i] + ",");
-		}	
+		}*/	
 	}
 }
