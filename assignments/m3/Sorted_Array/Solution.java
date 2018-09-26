@@ -4,6 +4,7 @@ public class Solution{
 		Scanner sc = new Scanner(System.in);
 		int m = sc.nextInt();
 		int n = sc.nextInt();
+		sc.nextLine();
 		int[] first = new int[m];
 		int[] second = new int[n];
 		int k = 0;
@@ -12,7 +13,7 @@ public class Solution{
 		}
 		k = 0;
 		for(String each : sc.nextLine().split(",")){
-			second[k++] = Integer.parseInt(each);
+			second[k++] = Integer.parseInt(""+each);
 		}
 		int[] result = new int[m+n];
 		for(int i = 0, j = 0; i < m || j < n; i++,j++){
