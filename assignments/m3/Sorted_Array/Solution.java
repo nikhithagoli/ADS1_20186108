@@ -6,7 +6,7 @@ public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //constructor.
     }
     /**
@@ -42,13 +42,11 @@ public final class Solution {
             sc.nextLine();
         }
         while (i < m && j < n) {
-            if (first[i] < second[j]){
+            if (first[i] < second[j]) {
                 str += Integer.toString(first[i++]) + ",";
-            }
-            else if (first[i] > second[j]){
+            } else if (first[i] > second[j]) {
                 str += Integer.toString(second[j++]) + ",";
-            }
-            else {
+            } else {
                 str += Integer.toString(second[j++]) + ",";
                 i++;
             }
