@@ -20,12 +20,15 @@ public class Solution{
 		}*/
 		int j, k;
         Arrays.sort(a);
+        //System.out.println(Arrays.toString(a));
         for (int i = 0; i < n - 2; i++) {
             j = i + 1;
             k = n - 1;
+            System.out.println(j+ "           " + k);
             while (j < k) {
                 if (a[i] + a[j] + a[k] == 0) {
                     count ++;
+                    break;
                 }
                 else if (a[i] + a[j] + a[k] < 0){
                     j++;
