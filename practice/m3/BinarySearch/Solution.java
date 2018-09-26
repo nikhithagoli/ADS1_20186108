@@ -25,11 +25,9 @@ public class Solution{
 			int middle = (first + last)/2;
 			if(arr[middle] == search){
 				if(arr[middle] == search){
-					int k = middle;
-					while(arr[k] == arr[k-1]){
-						k--;
+					if ((middle > 0 && arr[middle] != arr[middle - 1]) || middle == 0){
+						return middle;
 					}
-					return k;
 				}
 			}
 			else if(search < arr[middle]){
