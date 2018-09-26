@@ -29,7 +29,7 @@ public class Solution{
                 if (a[i] + a[j] + a[k] == 0) {
                     count ++;
                     j++;
-                    k++;
+                    k--;
                 }
                 else if (a[i] + a[j] + a[k] < 0){
                     j++;
