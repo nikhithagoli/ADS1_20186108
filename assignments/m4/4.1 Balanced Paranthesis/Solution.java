@@ -87,8 +87,8 @@ public final class Solution {
                 //System.out.println(st.gettop());
                 if (!st.isEmpty()) {
                     char top = st.gettop();
-                    if ((top == '(' && each == ')') ||
-                     (top == '{' && each == '}') || (top == '[' && each == ']')) {
+                    if ((top == '(' && each == ')') || (top == '{'
+                     && each == '}') || (top == '[' && each == ']')) {
                         char poppeditem = st.pop();
                     } else {
                         return "NO";
@@ -108,7 +108,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         Solution s = new Solution();
         int noOfInputs = sc.nextInt();
