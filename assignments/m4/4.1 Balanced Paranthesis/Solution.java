@@ -43,16 +43,20 @@ public class Solution{
 			}
 			else{
 				//System.out.println(st.gettop());
-				char top = st.gettop();
-				if((top == '(' && each == ')') || (top == '{' && each == '}') || (top == '[' && each == ']')){
-					char poppeditem = st.pop();
-				} 
-				else{
-					return "No";
+				if(!st.isEmpty()){
+					char top = st.gettop();
+					if((top == '(' && each == ')') || (top == '{' && each == '}') || (top == '[' && each == ']')){
+						char poppeditem = st.pop();
+					} 
+					else{
+						return "NO";
+					}
+				} else{
+					return "NO";
 				}
 			}
 		}
-		return "Yes";
+		return "YES";
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
