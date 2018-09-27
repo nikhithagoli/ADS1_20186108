@@ -6,17 +6,17 @@ class Stack {
     /**
      * stack list.
      */
-    char[] stack;
+    private char[] stack;
     /**
      * top index.
      */
-    int top;
+    private int top;
     /**
      * Constructs the object.
      *
      * @param      n     { parameter_description }
      */
-    Stack(int n) {
+    Stack(final int n) {
         stack = new char[n];
         top = 0;
     }
@@ -25,7 +25,7 @@ class Stack {
      *
      * @param      item  The item
      */
-    void push(char item) {
+    void push(final char item) {
         stack[top++] = item;
     }
     /**
@@ -67,7 +67,7 @@ class Stack {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Determines if balanced.
      *
@@ -75,7 +75,7 @@ public class Solution {
      *
      * @return     True if balanced, False otherwise.
      */
-    public String isBalanced(String str) {
+    public String isBalanced(final String str) {
         //System.out.println(str);
         Stack st = new Stack((str.length()) / 2);
         //System.out.println(Arrays.toString(str.toCharArray()));
@@ -87,7 +87,8 @@ public class Solution {
                 //System.out.println(st.gettop());
                 if (!st.isEmpty()) {
                     char top = st.gettop();
-                    if ((top == '(' && each == ')') || (top == '{' && each == '}') || (top == '[' && each == ']')) {
+                    if ((top == '(' && each == ')') ||
+                     (top == '{' && each == '}') || (top == '[' && each == ']')) {
                         char poppeditem = st.pop();
                     } else {
                         return "NO";
@@ -103,7 +104,7 @@ public class Solution {
         return "NO";
     }
     /**
-     * { function_description }
+     * main function.
      *
      * @param      args  The arguments
      */
