@@ -1,37 +1,80 @@
 import java.util.Scanner;
-import java.util.Arrays;
+/**
+ * stack class .
+ */
 class Stack {
+    /**
+     * stack list.
+     */
     char[] stack;
+    /**
+     * top index.
+     */
     int top;
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     */
     Stack(int n) {
         stack = new char[n];
         top = 0;
     }
+    /**
+     * pushes.
+     *
+     * @param      item  The item
+     */
     void push(char item) {
         stack[top++] = item;
     }
-
+    /**
+     * pops.
+     *
+     * @return     { description_of_the_return_value }
+     */
     char pop() {
         char popped = stack[--top];
         //stack[top--] = '\0';
         return popped;
     }
-
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
     boolean isEmpty() {
         return top == 0;
     }
-
+    /**
+     * Determines if full.
+     *
+     * @return     True if full, False otherwise.
+     */
     boolean isFull() {
         return top == stack.length;
     }
-
+    /**
+     * returns top element.
+     *
+     * @return     { description_of_the_return_value }
+     */
     char gettop() {
         return stack[top - 1];
     }
 
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
+    /**
+     * Determines if balanced.
+     *
+     * @param      str   The string
+     *
+     * @return     True if balanced, False otherwise.
+     */
     public String isBalanced(String str) {
         //System.out.println(str);
         Stack st = new Stack((str.length()) / 2);
@@ -59,6 +102,11 @@ public class Solution {
         }
         return "NO";
     }
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Solution s = new Solution();
