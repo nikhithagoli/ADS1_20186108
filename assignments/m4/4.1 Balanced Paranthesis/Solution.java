@@ -56,7 +56,10 @@ public class Solution{
 				}
 			}
 		}
-		return "YES";
+		if(st.isEmpty()){
+			return "YES";
+		}
+		return "NO";
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
