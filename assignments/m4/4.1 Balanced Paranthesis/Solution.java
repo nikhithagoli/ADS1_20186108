@@ -48,11 +48,11 @@ public class Solution{
 					char poppeditem = st.pop();
 				} 
 				else{
-					return "NO";
+					return "No";
 				}
 			}
 		}
-		return "YES";
+		return "Yes";
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
