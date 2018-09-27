@@ -1,0 +1,1 @@
+b, f, g with not be result of sequence of mixed push and pop operations in 0 - 9 order.
