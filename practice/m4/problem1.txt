@@ -1,0 +1,40 @@
+input = it was - the best - of times - - - it was - the - -
+output = []
+stack = []
+input = it ==> push(it) ==> stack[it]
+
+input = was ==> push(was) ==> stack[was, it]
+
+input = - ==> pop() ==> stack[it] ==> output = [was]
+
+input = the ==> push(the) ==> stack[the,it]
+
+input = best ==> push(best) ==> stack[best, the, it]
+\
+input = - ==> pop() ==> stack[the, it] ==> output = [was, best]
+
+input = of ==> push(of) ==> stack[of, the, it]
+
+input = times ==> push(times) ==> stack[times, of, the, it]
+
+input = - ==> pop() ==> stack[of, the, it] ==> output = [was, best, times]
+
+input = - ==> pop() ==> stack[the, it] ==> output = [was, best, times, of]
+
+input = - ==> pop() ==> stack[it] ==> output = [was, best, times, of, the]
+
+input = it ==> push(it) ==> stack[it, it]
+
+input = was ==> push(was) ==> stack[was, it, it]
+
+input = - ==> pop() ==> stack[it, it] ==> output = [was, best, times, of, the, was]
+
+input = the ==> push(the) ==> stack[the, it, it]
+
+input = - ==> pop() ==> stack[it, it] ==> output = [was, best, times, of, the, was, the]
+
+input = - ==> pop() ==> stack[it] ==> output = [was, best, times, of, the, was, the, it]
+
+
+
+the output is [was, best, times, of, the, was, the, it].
