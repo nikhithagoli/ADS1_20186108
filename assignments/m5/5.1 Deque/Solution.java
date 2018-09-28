@@ -91,7 +91,7 @@ class Deque {
 			}
 			return "[" + str.substring(0,str.length()-2) + "]";
 		}
-		return "[]";
+		return "Deck is empty";
 		
 	}
 
