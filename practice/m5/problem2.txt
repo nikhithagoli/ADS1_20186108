@@ -1,0 +1,1 @@
+the given code helps to store the elements in the given queue in reverse order within the same queue with the help of stack.
