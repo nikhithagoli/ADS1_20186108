@@ -91,7 +91,7 @@ class Deque {
 			}
 			return "[" + str.substring(0,str.length()-2) + "]";
 		}
-		return "Deck is empty";
+		return "[]";
 		
 	}
 
@@ -114,12 +114,20 @@ class Solution{
 					System.out.println(d.print());
 					break;
 				case "popLeft":
-					d.popLeft();
-					System.out.println(d.print());
+					if(!d.isEmpty()){
+						d.popLeft();
+						System.out.println(d.print());
+					} else{
+						System.out.println("Deck is empty");
+					}
 					break;
 				case "popRight":
-					d.popRight();
-					System.out.println(d.print());
+					if(!d.isEmpty()){
+						d.popRight();
+						System.out.println(d.print());
+					} else {
+						System.out.println("Deck is empty");
+					}
 					break;
 				case "size":
 					System.out.println(d.size());
