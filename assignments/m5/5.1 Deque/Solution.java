@@ -115,11 +115,19 @@ class Solution{
 					break;
 				case "popLeft":
 					d.popLeft();
-					System.out.println(d.print());
+					if(d.size() != 0){
+						System.out.println(d.print());
+					}
+					else{
+						System.out.println("[]");
+					}
 					break;
 				case "popRight":
 					d.popRight();
-					System.out.println(d.print());
+					if(d.size() != 0){
+						System.out.println(d.print());
+					}
+					System.out.println("[]");
 					break;
 				case "size":
 					System.out.println(d.size());
