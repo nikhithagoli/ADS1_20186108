@@ -86,10 +86,10 @@ class Deque {
 			String str = "";
 			Node temp = first;
 			while(temp != null){
-				str += temp.data + ",";
+				str += temp.data + ", ";
 				temp = temp.next;
 			}
-			return "[" + str.substring(0,str.length()-1) + "]";
+			return "[" + str.substring(0,str.length()-2) + "]";
 		}
 		return "[]";
 		
