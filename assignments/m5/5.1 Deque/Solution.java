@@ -6,11 +6,11 @@ class Deque {
     /**
      * no of elements.
      */
-    int noOfElements;
+    private int noOfElements;
     /**
      * first, last nodes.
      */
-    Node first, last;
+    private Node first, last;
     /**
      * Class for node.
      */
@@ -18,11 +18,11 @@ class Deque {
         /**
          * data.
          */
-        String data;
+        private String data;
         /**
          * next link.
          */
-        Node next;
+        private Node next;
         /**
          * Constructs the object.
          *
@@ -47,7 +47,7 @@ class Deque {
      *
      * @param      value  The value
      */
-    void pushLeft(String value) {
+    void pushLeft(final String value) {
         if (first == null) {
             first = new Node(value, null);
             //first.data = value;
@@ -67,7 +67,7 @@ class Deque {
      *
      * @param      value  The value
      */
-    void pushRight(String value) {
+    void pushRight(final String value) {
         if (last == null) {
             last = new Node(value, null);
             // last.data = value;
@@ -154,7 +154,13 @@ class Deque {
  */
 class Solution {
     /**
-     * { function_description }
+     * Constructs the object.
+     */
+    private Solution(){
+        //function.
+    }
+    /**
+     * main.
      *
      * @param      args  The arguments
      */
