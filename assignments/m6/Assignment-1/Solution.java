@@ -140,7 +140,7 @@ final class AddLargeNumbers {
      * @return     { description_of_the_return_value }
      */
     public static LinkedList addLargeNumbers(final LinkedList list1,
-     final LinkedList list2) {
+            final LinkedList list2) {
         LinkedList added = new LinkedList();
         LinkedList stack1 = new LinkedList();
         LinkedList stack2 = new LinkedList();
@@ -171,15 +171,15 @@ final class AddLargeNumbers {
             }
 
         }
-        if(stack1.isEmpty() && stack2.isEmpty()){
+        if (stack1.isEmpty() && stack2.isEmpty()) {
             added.insertleft(Integer.toString(carry));
-        } else{
+        } else {
             while (!stack1.isEmpty()) {
-            int d = Integer.parseInt(stack1.remove()) + carry;
-            carry = 0;
-            added.insertleft(Integer.toString(d));
+                int d = Integer.parseInt(stack1.remove()) + carry;
+                carry = 0;
+                added.insertleft(Integer.toString(d));
             }
-        
+
             while (!stack2.isEmpty()) {
                 int d = Integer.parseInt(stack2.remove()) + carry;
                 carry = 0;
