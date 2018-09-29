@@ -176,10 +176,11 @@ final class Solution {
                 for(int j = 0; j < m-1; j++){
                     queue.pushRight(queue.popLeft());
                 }
-                System.out.print(queue.popLeft());
+                System.out.print(queue.popLeft() + " ");
                 //queue.print();
             }
             System.out.print(queue.popLeft());
+            System.out.println();
         }
     }
 }
