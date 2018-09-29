@@ -18,10 +18,18 @@ class LinkedList {
         /**
          * next.
          */
-        Node next;
-
-        String getdigit(){
+        private Node next;
+        /**
+         * { function_description }
+         *
+         * @return     { description_of_the_return_value }
+         */
+        String getdigit() {
             return this.digit;
+        }
+
+        Node getnext(){
+            return this.next;
         }
     }
     /**
@@ -131,7 +139,7 @@ final class AddLargeNumbers {
         list.temp = list.head;
         while (list.temp != null) {
             str += list.temp.getdigit();
-            list.temp = list.temp.next;
+            list.temp = list.temp.getnext();
         }
         list.temp = null;
         return str;
@@ -152,13 +160,13 @@ final class AddLargeNumbers {
         list1.temp = list1.head;
         while (list1.temp != null) {
             stack1.insertleft(list1.temp.getdigit());
-            list1.temp = list1.temp.next;
+            list1.temp = list1.temp.getnext();
         }
         //System.out.println(digitsToNumber(stack1));
         list2.temp = list2.head;
         while (list2.temp != null) {
             stack2.insertleft(list2.temp.getdigit());
-            list2.temp = list2.temp.next;
+            list2.temp = list2.temp.getnext();
         }
         //System.out.println(digitsToNumber(stack2));
         int carry = 0;
