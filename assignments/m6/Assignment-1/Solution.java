@@ -1,23 +1,28 @@
 import java.util.Scanner;
-import java.util.Stack;
-import java.util.Arrays;
 /**
 * class for linked list.
 */
 class LinkedList {
     /**
+     * no of elements.
+     */
+    private int noOfElements;
+    /**
      * Class for node.
      */
-    int noOfElements;
     class Node {
         /**
          * digit.
          */
-        String digit;
+        private String digit;
         /**
          * next.
          */
         Node next;
+
+        String getdigit(){
+            return this.digit;
+        }
     }
     /**
      * nodes.
@@ -125,7 +130,7 @@ final class AddLargeNumbers {
         String str = "";
         list.temp = list.head;
         while (list.temp != null) {
-            str += list.temp.digit;
+            str += list.temp.getdigit();
             list.temp = list.temp.next;
         }
         list.temp = null;
@@ -146,13 +151,13 @@ final class AddLargeNumbers {
         LinkedList stack2 = new LinkedList();
         list1.temp = list1.head;
         while (list1.temp != null) {
-            stack1.insertleft(list1.temp.digit);
+            stack1.insertleft(list1.temp.getdigit());
             list1.temp = list1.temp.next;
         }
         //System.out.println(digitsToNumber(stack1));
         list2.temp = list2.head;
         while (list2.temp != null) {
-            stack2.insertleft(list2.temp.digit);
+            stack2.insertleft(list2.temp.getdigit());
             list2.temp = list2.temp.next;
         }
         //System.out.println(digitsToNumber(stack2));
@@ -222,7 +227,8 @@ public final class Solution {
             //System.out.println(AddLargeNumbers.digitsToNumber(pDigits));
             qDigits = AddLargeNumbers.numberToDigits(q);
             //System.out.println(AddLargeNumbers.digitsToNumber(qDigits));
-            LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+            LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits,
+             qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
         default:
