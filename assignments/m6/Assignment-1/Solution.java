@@ -21,7 +21,7 @@ class LinkedList {
     /**
      * nodes.
      */
-    Node head, last, temp, newnode;
+    Node head, last, temp;
     /**
      * Constructs the object.
      */
@@ -41,14 +41,13 @@ class LinkedList {
             head.digit = val;
             head.next = null;
             last = head;
-            temp = head;
         } else {
-            newnode = new Node();
-            newnode.digit = val;
-            newnode.next = null;
-            last.next = newnode;
-            last = newnode;
-            newnode = null;
+            temp = new Node();
+            temp.digit = val;
+            temp.next = null;
+            last.next = temp;
+            last = temp;
+            temp = null;
 
         }
     }
@@ -63,11 +62,11 @@ class LinkedList {
             head.digit = val;
             head.next = null;
         } else {
-            newnode = new Node();
-            newnode.digit = val;
-            newnode.next = head;
-            head = newnode;
-            newnode = null;
+            temp = new Node();
+            temp.digit = val;
+            temp.next = head;
+            head = temp;
+            temp = null;
         }
         noOfElements++;
     }
