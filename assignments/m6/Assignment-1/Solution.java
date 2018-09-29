@@ -167,6 +167,7 @@ final class AddLargeNumbers {
                 carry = Integer.parseInt(res[0]);
             } else {
                 added.insertleft(res[0]);
+                carry = 0;
             }
 
         }
