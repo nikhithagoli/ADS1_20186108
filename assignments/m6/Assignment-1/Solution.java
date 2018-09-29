@@ -70,12 +70,20 @@ class LinkedList {
         }
         noOfElements++;
     }
-
-    boolean isEmpty(){
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
+    boolean isEmpty() {
         return noOfElements == 0;
     }
-
-    String remove(){
+    /**
+     * removes.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    String remove() {
         String popped = head.digit;
         head = head.next;
         noOfElements--;
@@ -86,6 +94,12 @@ class LinkedList {
  * Class for add large numbers.
  */
 class AddLargeNumbers {
+    /**
+     * Constructs the object.
+     */
+    private AddLargeNumbers(){
+        //contructor.
+    }
     /**
      * numbertodigits.
      *
@@ -129,10 +143,6 @@ class AddLargeNumbers {
     public static LinkedList addLargeNumbers(final LinkedList list1,
      final LinkedList list2) {
         LinkedList added = new LinkedList();
-        // Stack stack1 = new Stack();
-        // Stack stack2 = new Stack();
-        // Stack<String> stack1 = new Stack<>();
-        // Stack<String> stack2 = new Stack<>();
         LinkedList stack1 = new LinkedList();
         LinkedList stack2 = new LinkedList();
         list1.temp = list1.head;
@@ -171,6 +181,12 @@ class AddLargeNumbers {
  * class.
  */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution(){
+        //function.
+    }
     /**
      * main.
      *
