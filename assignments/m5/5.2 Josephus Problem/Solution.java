@@ -76,6 +76,8 @@ class Deque {
     }
     /**
      * popleft.
+     *
+     * @return     { description_of_the_return_value }
      */
     int popLeft() {
         if (first != null) {
@@ -90,7 +92,9 @@ class Deque {
         }
     }
     /**
-     * popright.
+     * pop right.
+     *
+     * @return     { description_of_the_return_value }
      */
     int popRight() {
         if (last != null) {
