@@ -20,15 +20,19 @@ class LinkedList {
          */
         private Node next;
         /**
-         * { function_description }
+         * { function_description }.
          *
          * @return     { description_of_the_return_value }
          */
         String getdigit() {
             return this.digit;
         }
-
-        Node getnext(){
+        /**
+         * { function_description }.
+         *
+         * @return     { description_of_the_return_value }
+         */
+        Node getnext() {
             return this.next;
         }
     }
