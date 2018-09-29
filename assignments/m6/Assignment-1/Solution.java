@@ -180,7 +180,7 @@ final class AddLargeNumbers {
             }
         
             while (!stack2.isEmpty()) {
-                int d = Integer.parseInt(stack1.remove() + carry);
+                int d = Integer.parseInt(stack2.remove() + carry);
                 carry = 0;
                 added.insertleft(Integer.toString(d));
             }
