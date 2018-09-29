@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.Arrays;
 /**
 * class for linked list.
 */
@@ -91,11 +92,11 @@ class LinkedList {
 /**
  * Class for add large numbers.
  */
-class AddLargeNumbers {
+final class AddLargeNumbers {
     /**
      * Constructs the object.
      */
-    private AddLargeNumbers(){
+    private AddLargeNumbers() {
         //contructor.
     }
     /**
@@ -146,16 +147,21 @@ class AddLargeNumbers {
         list1.temp = list1.head;
         while (list1.temp != null) {
             stack1.insertleft(list1.temp.digit);
+            list1.temp = list1.temp.next;
         }
+        //System.out.println(digitsToNumber(stack1));
         list2.temp = list2.head;
         while (list2.temp != null) {
             stack2.insertleft(list2.temp.digit);
+            list2.temp = list2.temp.next;
         }
+        //System.out.println(digitsToNumber(stack2));
         int carry = 0;
         while (!stack1.isEmpty() && !stack2.isEmpty()) {
             int a = Integer.parseInt(stack1.remove());
             int b = Integer.parseInt(stack2.remove());
             String[] res = Integer.toString(a + b + carry).split("");
+            //System.out.println(Arrays.toString(res));
             if (res.length == 2) {
                 added.insertleft(res[1]);
                 carry = Integer.parseInt(res[0]);
@@ -164,11 +170,20 @@ class AddLargeNumbers {
             }
 
         }
-        while (!stack1.isEmpty()) {
-            added.insertleft(stack1.remove());
-        }
-        while (!stack2.isEmpty()) {
-            added.insertleft(stack2.remove());
+        if(stack1.isEmpty() && stack2.isEmpty()){
+            added.insertleft(Integer.toString(carry));
+        } else{
+            while (!stack1.isEmpty()) {
+            int d = Integer.parseInt(stack1.remove() + carry);
+            carry = 0;
+            added.insertleft(Integer.toString(d));
+            }
+        
+            while (!stack2.isEmpty()) {
+                int d = Integer.parseInt(stack1.remove() + carry);
+                carry = 0;
+                added.insertleft(Integer.toString(d));
+            }
         }
         return added;
     }
@@ -180,7 +195,7 @@ public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //function.
     }
     /**
@@ -203,7 +218,9 @@ public final class Solution {
 
         case "addLargeNumbers":
             pDigits = AddLargeNumbers.numberToDigits(p);
+            //System.out.println(AddLargeNumbers.digitsToNumber(pDigits));
             qDigits = AddLargeNumbers.numberToDigits(q);
+            //System.out.println(AddLargeNumbers.digitsToNumber(qDigits));
             LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
