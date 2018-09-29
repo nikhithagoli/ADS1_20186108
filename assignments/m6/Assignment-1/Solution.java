@@ -147,12 +147,10 @@ class AddLargeNumbers {
         while (list1.temp != null) {
             stack1.insertleft(list1.temp.digit);
         }
-        list1.temp = null;
         list2.temp = list2.head;
         while (list2.temp != null) {
             stack2.insertleft(list2.temp.digit);
         }
-        list2.temp = null;
         int carry = 0;
         while (!stack1.isEmpty() && !stack2.isEmpty()) {
             int a = Integer.parseInt(stack1.remove());
