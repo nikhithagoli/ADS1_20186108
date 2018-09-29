@@ -47,7 +47,6 @@ class LinkedList {
             temp.next = null;
             last.next = temp;
             last = temp;
-            temp = null;
 
         }
     }
@@ -66,7 +65,6 @@ class LinkedList {
             temp.digit = val;
             temp.next = head;
             head = temp;
-            temp = null;
         }
         noOfElements++;
     }
