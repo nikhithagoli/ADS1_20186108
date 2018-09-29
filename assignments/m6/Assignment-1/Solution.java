@@ -106,7 +106,7 @@ class LinkedList {
         return popped;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -114,7 +114,7 @@ class LinkedList {
         return this.head;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -123,7 +123,7 @@ class LinkedList {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
