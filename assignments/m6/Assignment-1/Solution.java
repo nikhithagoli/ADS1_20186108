@@ -110,7 +110,7 @@ class LinkedList {
      *
      * @return     { description_of_the_return_value }
      */
-    Node gethead(){
+    Node gethead() {
         return this.head;
     }
     /**
@@ -118,19 +118,19 @@ class LinkedList {
      *
      * @return     { description_of_the_return_value }
      */
-    Node getlast(){
+    Node getlast() {
         return this.last;
     }
-    
+
     /**
      * { function_description }
      *
      * @return     { description_of_the_return_value }
      */
-    Node gettemp(){
+    Node gettemp() {
         return this.temp;
     }
-    
+
 
 }
 /**
@@ -267,7 +267,7 @@ public final class Solution {
             qDigits = AddLargeNumbers.numberToDigits(q);
             //System.out.println(AddLargeNumbers.digitsToNumber(qDigits));
             LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits,
-             qDigits);
+                                qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
         default:
