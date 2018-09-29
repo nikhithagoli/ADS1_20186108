@@ -84,7 +84,7 @@ class Deque {
             popped.next = null;
             noOfElements--;
             return popped.data;
-            
+
         } else {
             return 0;
         }
@@ -106,7 +106,7 @@ class Deque {
             //popped.next = null;
             noOfElements--;
             return popped.data;
-        } else{
+        } else {
             return 0;
         }
     }
@@ -164,16 +164,16 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int noOfinputs = sc.nextInt();
-        for(int i = 0; i < noOfinputs; i++){
+        for (int i = 0; i < noOfinputs; i++) {
             Deque queue = new Deque();
             sc.nextLine();
             int n = sc.nextInt();
             int m = sc.nextInt();
-            for(int j = 0; j < n; j++){
+            for (int j = 0; j < n; j++) {
                 queue.pushRight(j);
             }
-            while(queue.size() != 1){
-                for(int j = 0; j < m-1; j++){
+            while (queue.size() != 1) {
+                for (int j = 0; j < m - 1; j++) {
                     queue.pushRight(queue.popLeft());
                 }
                 System.out.print(queue.popLeft() + " ");
