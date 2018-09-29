@@ -105,6 +105,33 @@ class LinkedList {
         noOfElements--;
         return popped;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    Node gethead(){
+        return this.head;
+    }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    Node getlast(){
+        return this.last;
+    }
+    
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    Node gettemp(){
+        return this.temp;
+    }
+    
+
 }
 /**
  * Class for add large numbers.
