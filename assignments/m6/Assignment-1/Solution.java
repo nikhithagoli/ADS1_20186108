@@ -174,13 +174,13 @@ final class AddLargeNumbers {
             added.insertleft(Integer.toString(carry));
         } else{
             while (!stack1.isEmpty()) {
-            int d = Integer.parseInt(stack1.remove() + carry);
+            int d = Integer.parseInt(stack1.remove()) + carry;
             carry = 0;
             added.insertleft(Integer.toString(d));
             }
         
             while (!stack2.isEmpty()) {
-                int d = Integer.parseInt(stack2.remove() + carry);
+                int d = Integer.parseInt(stack2.remove()) + carry;
                 carry = 0;
                 added.insertleft(Integer.toString(d));
             }
