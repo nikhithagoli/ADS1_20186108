@@ -1,73 +1,75 @@
 import java.util.Scanner;
-import java.util.Arrays;
-class Stack {
-    /**
-     * stack list.
-     */
-    private String[] stack;
-    /**
-     * top index.
-     */
-    private int top;
-    /**
-     * Constructs the object.
-     *
-     * @param      n     { parameter_description }
-     */
-    Stack() {
-        stack = new String[20];
-        top = 0;
-    }
-    void resize(){
-    	stack = Arrays.copyOf(stack, stack.length*2);
-    }
-    /**
-     * pushes.
-     *
-     * @param      item  The item
-     */
-    void push(final String item) {
-    	if(top == stack.length){
-    		resize();
-    	}
-        stack[top++] = item;
-    }
-    /**
-     * pops.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    String pop() {
-        String popped = stack[--top];
-        //stack[top--] = '\0';
-        return popped;
-    }
-    /**
-     * Determines if empty.
-     *
-     * @return     True if empty, False otherwise.
-     */
-    boolean isEmpty() {
-        return top == 0;
-    }
-    /**
-     * Determines if full.
-     *
-     * @return     True if full, False otherwise.
-     */
-    boolean isFull() {
-        return top == stack.length;
-    }
-    /**
-     * returns top element.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    String gettop() {
-        return stack[top - 1];
-    }
+//import java.util.Arrays;
+import java.util.Stack;
 
-}
+// class Stack {
+//     /**
+//      * stack list.
+//      */
+//     private String[] stack;
+//     /**
+//      * top index.
+//      */
+//     private int top;
+//     /**
+//      * Constructs the object.
+//      *
+//      * @param      n     { parameter_description }
+//      */
+//     Stack() {
+//         stack = new String[10];
+//         top = 0;
+//     }
+//     void resize(){
+//     	stack = Arrays.copyOf(stack, stack.length*2);
+//     }
+//     /**
+//      * pushes.
+//      *
+//      * @param      item  The item
+//      */
+//     void push(final String item) {
+//     	if(top == stack.length){
+//     		resize();
+//     	}
+//         stack[top++] = item;
+//     }
+//     /**
+//      * pops.
+//      *
+//      * @return     { description_of_the_return_value }
+//      */
+//     String pop() {
+//         String popped = stack[--top];
+//         //stack[top--] = '\0';
+//         return popped;
+//     }
+//     /**
+//      * Determines if empty.
+//      *
+//      * @return     True if empty, False otherwise.
+//      */
+//     boolean isEmpty() {
+//         return top == 0;
+//     }
+//     /**
+//      * Determines if full.
+//      *
+//      * @return     True if full, False otherwise.
+//      */
+//     boolean isFull() {
+//         return top == stack.length;
+//     }
+//     /**
+//      * returns top element.
+//      *
+//      * @return     { description_of_the_return_value }
+//      */
+//     String gettop() {
+//         return stack[top - 1];
+//     }
+
+// }
 class LinkedList{
 	class Node{
 		String digit;
@@ -131,8 +133,10 @@ class AddLargeNumbers {
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
     	LinkedList added = new LinkedList();
-    	Stack stack1 = new Stack();
-    	Stack stack2 = new Stack();
+    	// Stack stack1 = new Stack();
+    	// Stack stack2 = new Stack();
+    	Stack<String> stack1 = new Stack<>();
+    	Stack<String> stack2 = new Stack<>();
       	list1.temp = list1.head;
     	while(list1.temp != null){
     		stack1.push(list1.temp.digit);
@@ -141,10 +145,10 @@ class AddLargeNumbers {
     	while(list2.temp != null){
     		stack2.push(list2.temp.digit);
     	}
+    	int carry = 0;
     	while(!stack1.isEmpty() && !stack2.isEmpty()){
     		int a =Integer.parseInt(stack1.pop());
     		int b =Integer.parseInt(stack2.pop());
-    		int carry = 0;
     		String[] res =Integer.toString(a+b+carry).split("");
     		if(res.length == 2){
     			added.insertleft(res[1]);
