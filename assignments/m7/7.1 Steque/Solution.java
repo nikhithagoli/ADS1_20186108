@@ -97,6 +97,9 @@ class Deque {
             last = null;
         }
     }
+    /**
+     * set size.
+     */
     void setsize() {
         this.noOfElements = 0;
     }
