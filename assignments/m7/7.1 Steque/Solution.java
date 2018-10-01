@@ -160,7 +160,7 @@ final class Solution {
             Deque d = new Deque();
             while(sc.hasNext()){
                 String line = sc.nextLine();
-                System.out.println(line);
+                //System.out.println(line);
                 if(line == "\n"){
                     break;
                 } else {
