@@ -43,8 +43,10 @@ class Deque {
         last = null;
     }
     /**
-     * Pushes a left.
-     *
+     * Pushes at left.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      * @param      value  The value
      */
     void push(final String value) {
@@ -63,8 +65,10 @@ class Deque {
         noOfElements++;
     }
     /**
-     * Pushes a right.
-     *
+     * Pushes at right.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      * @param      value  The value
      */
     void enqueue(final String value) {
@@ -83,7 +87,10 @@ class Deque {
         noOfElements++;
     }
     /**
-     * popleft.
+     * pops left.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      */
     void pop() {
         if (first != null) {
@@ -99,6 +106,9 @@ class Deque {
     }
     /**
      * set size.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      */
     void setsize() {
         this.noOfElements = 0;
@@ -106,7 +116,9 @@ class Deque {
 
     /**
      * size.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      * @return     { description_of_the_return_value }
      */
     int size() {
@@ -114,7 +126,9 @@ class Deque {
     }
     /**
      * Determines if empty.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * average case: O(1)
      * @return     True if empty, False otherwise.
      */
     boolean isEmpty() {
@@ -122,7 +136,9 @@ class Deque {
     }
     /**
      * prints.
-     *
+     * Best case: O(1)
+     * Worst case: O(n)
+     * average case: O(n)
      * @return     { description_of_the_return_value }
      */
     String print() {
