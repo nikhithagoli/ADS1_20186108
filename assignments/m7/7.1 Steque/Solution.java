@@ -159,7 +159,7 @@ final class Solution {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
             Deque d = new Deque();
-            while(sc.hasNext()){
+            while(sc.hasNextLine()){
                 String line = sc.nextLine();
                 //System.out.println(line);
                 if(line == "\n" || line == "" || line == " "){
@@ -191,7 +191,6 @@ final class Solution {
                 
             }
             System.out.println();
-            d.setsize();
         }
     }
 }
