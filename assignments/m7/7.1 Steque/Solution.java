@@ -162,7 +162,7 @@ final class Solution {
             while(sc.hasNextLine()){
                 String line = sc.nextLine();
                 //System.out.println(line);
-                if(line == "\n" || line == "" || line == " "){
+                if(line.equals("\n") || line.equals("") || line.equals(" ")){
                     break;
                 } else {
                     String[] input = line.split(" ");
