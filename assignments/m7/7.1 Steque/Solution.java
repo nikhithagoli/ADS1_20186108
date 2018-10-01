@@ -93,11 +93,11 @@ class Deque {
             popped.next = null;
             noOfElements--;
         }
-        if(first == null){
-            last =null;
+        if (first == null) {
+            last = null;
         }
     }
-    void setsize(){
+    void setsize() {
         this.noOfElements = 0;
     }
 
@@ -159,36 +159,36 @@ final class Solution {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
             Deque d = new Deque();
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 //System.out.println(line);
-                if(line.equals("\n") || line.equals("") || line.equals(" ")){
+                if (line.equals("\n") || line.equals("") || line.equals(" ")) {
                     break;
                 } else {
                     String[] input = line.split(" ");
                     switch (input[0]) {
-                        case "push":
-                            d.push(input[1]);
+                    case "push":
+                        d.push(input[1]);
+                        System.out.println(d.print());
+                        break;
+                    case "enqueue":
+                        d.enqueue(input[1]);
+                        System.out.println(d.print());
+                        break;
+                    case "pop":
+                        if (!d.isEmpty()) {
+                            d.pop();
                             System.out.println(d.print());
-                            break;
-                        case "enqueue":
-                            d.enqueue(input[1]);
-                            System.out.println(d.print());
-                            break;
-                        case "pop":
-                            if (!d.isEmpty()) {
-                                d.pop();
-                                System.out.println(d.print());
-                            } else {
-                                System.out.println("Steque is empty.");
-                            }
-                            break;
-                        default:
-                            break;
+                        } else {
+                            System.out.println("Steque is empty.");
+                        }
+                        break;
+                    default:
+                        break;
 
                     }
                 }
-                
+
             }
             System.out.println();
         }
