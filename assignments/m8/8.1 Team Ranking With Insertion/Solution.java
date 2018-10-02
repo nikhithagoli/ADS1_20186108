@@ -87,7 +87,7 @@ class Details {
      *
      * @return     { description_of_the_return_value }
      */
-    public int compareTo(Details that) {
+    public int compareTo(final Details that) {
         if (this.getwins() > that.getwins()) {
             return 1;
         } else if (this.getwins() < that.getwins()) {
