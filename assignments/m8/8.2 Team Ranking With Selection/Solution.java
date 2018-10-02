@@ -105,7 +105,7 @@ final class Solution {
      */
     static Details[] insertionsort(final Details[] list, final int n) {
         for (int  i = 0; i < n; i++) {
-            for (int j = i ; j > 0; j--) {
+            for (int j = i; j > 0; j--) {
                 int min = j - 1;
                 if (list[j].getwins() == (list[j - 1].getwins())) {
                     if (list[j].getlost() == (list[j - 1].getlost())) {
@@ -121,6 +121,9 @@ final class Solution {
                     if (list[j].getwins() > list[j - 1].getwins()) {
                         min = j;
                     }
+                }
+                if((min == j - 1)){
+                    break;
                 }
                 Details temp = list[j - 1];
                 list[j - 1] = list[min];
