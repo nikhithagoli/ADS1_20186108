@@ -35,7 +35,7 @@ class Details {
     }
     /**
      * returns name.
-     * 
+     *
      * best case: O(1)
      * worst case: O(1)
      * aversge case: O(1)
@@ -51,7 +51,7 @@ class Details {
      * best case: O(1)
      * worst case: O(1)
      * aversge case: O(1)
-     * 
+     *
      * @return     { description_of_the_return_value }
      */
     int getwins() {
@@ -63,7 +63,7 @@ class Details {
      * best case: O(1)
      * worst case: O(1)
      * aversge case: O(1)
-     * 
+     *
      * @return     { description_of_the_return_value }
      */
     int getlost() {
@@ -93,17 +93,17 @@ final class Solution {
     }
     /**
      * sorts.
-     * 
+     *
      * best case: O(n^2)
      * worst case: O(n^2)
      * average case: O(n^2)
-     * 
+     *
      * @param      list  The list
      *
      * @param      n  The size
      * @return     { description_of_the_return_value }
      */
-    static Details[] selectionsort(final Details[] list, final int n){
+    static Details[] selectionsort(final Details[] list, final int n) {
         for (int  i = 0; i < n; i++) {
             int min = i;
             for (int j = i + 1; j < n; j++) {
@@ -131,7 +131,7 @@ final class Solution {
     }
     /**
      * main.
-     * 
+     *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
@@ -141,7 +141,7 @@ final class Solution {
         while (sc.hasNextLine()) {
             String[] tokens = sc.nextLine().split(",");
             list[n++] = new Details(tokens[0], Integer.parseInt(tokens[1]),
-             Integer.parseInt(tokens[2]), Integer.parseInt(tokens[2 + 1]));
+                Integer.parseInt(tokens[2]), Integer.parseInt(tokens[2 + 1]));
         }
         list = selectionsort(list, n);
         for (int i = 0; i < n - 1; i++) {
