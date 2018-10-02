@@ -80,6 +80,34 @@ class Details {
     int getdraws() {
         return this.draws;
     }
+    /**
+     * comapares.
+     *
+     * @param      that  The that
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int compareTo(final Details that) {
+        if (this.getwins() > that.getwins()) {
+            return 1;
+        } else if (this.getwins() < that.getwins()) {
+            return -1;
+        } else {
+            if (this.getlost() > that.getlost()) {
+                return -1;
+            } else if (this.getlost() < that.getlost()) {
+                return 1;
+            } else {
+                if (this.getdraws() > that.getdraws()) {
+                    return 1;
+                } else if (this.getdraws() < that.getdraws()) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        }
+    }
 }
 /**
  * Class for solution.
@@ -106,28 +134,11 @@ final class Solution {
     static Details[] insertionsort(final Details[] list, final int n) {
         for (int  i = 0; i < n; i++) {
             for (int j = i; j > 0; j--) {
-                int min = j - 1;
-                if (list[j].getwins() == (list[j - 1].getwins())) {
-                    if (list[j].getlost() == (list[j - 1].getlost())) {
-                        if (list[j].getdraws() > list[j - 1].getdraws()) {
-                            min = j;
-                        }
-                    } else {
-                        if (list[j].getlost() < list[j - 1].getlost()) {
-                            min = j;
-                        }
-                    }
-                } else {
-                    if (list[j].getwins() > list[j - 1].getwins()) {
-                        min = j;
-                    }
+                if(list[j].compareTo(list[j-1]) > -1){
+                    Details temp = list[j - 1];
+                    list[j - 1] = list[j];
+                    list[j] = temp;
                 }
-                if (min == j - 1) {
-                    break;
-                }
-                Details temp = list[j - 1];
-                list[j - 1] = list[min];
-                list[min] = temp;
             }
 
         }
