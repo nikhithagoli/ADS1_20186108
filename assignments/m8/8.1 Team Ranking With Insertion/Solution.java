@@ -22,10 +22,10 @@ class Details {
     /**
      * constuctor.
      *
-     * @param      name   The name
-     * @param      wins   The wins
-     * @param      lost   The lost
-     * @param      draws  The draws
+     * @param      n   The name
+     * @param      w   The wins
+     * @param      l  The lost
+     * @param      d  The draws
      */
     Details(final String n, final int w, final int l, final int d) {
         this.name = n;
@@ -88,7 +88,7 @@ final class Solution {
         while (sc.hasNextLine()) {
             String[] tokens = sc.nextLine().split(",");
             list[n++] = new Details(tokens[0], Integer.parseInt(tokens[1]),
-             Integer.parseInt(tokens[2]), Integer.parseInt(tokens[2+1]));
+             Integer.parseInt(tokens[2]), Integer.parseInt(tokens[2 + 1]));
         }
         for (int  i = 0; i < n; i++) {
             int min = i;
