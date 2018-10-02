@@ -134,7 +134,7 @@ final class Solution {
     static Details[] insertionsort(final Details[] list, final int n) {
         for (int  i = 0; i < n; i++) {
             for (int j = i; j > 0; j--) {
-                if(list[j].compareTo(list[j-1]) > -1){
+                if (list[j].compareTo(list[j - 1]) > -1) {
                     Details temp = list[j - 1];
                     list[j - 1] = list[j];
                     list[j] = temp;
