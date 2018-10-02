@@ -80,6 +80,34 @@ class Details {
     int getdraws() {
         return this.draws;
     }
+    /**
+     * comapares.
+     *
+     * @param      that  The that
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int compareTo(Details that) {
+        if (this.getwins() > that.getwins()) {
+            return 1;
+        } else if (this.getwins() < that.getwins()) {
+            return -1;
+        } else {
+            if (this.getlost() > that.getlost()) {
+                return -1;
+            } else if (this.getlost() < that.getlost()) {
+                return 1;
+            } else {
+                if (this.getdraws() > that.getdraws()) {
+                    return 1;
+                } else if (this.getdraws() < that.getdraws()) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        }
+    }
 }
 /**
  * Class for solution.
@@ -107,20 +135,8 @@ final class Solution {
         for (int  i = 0; i < n; i++) {
             int min = i;
             for (int j = i + 1; j < n; j++) {
-                if (list[j].getwins() == (list[min].getwins())) {
-                    if (list[j].getlost() == (list[min].getlost())) {
-                        if (list[j].getdraws() > list[min].getdraws()) {
-                            min = j;
-                        }
-                    } else {
-                        if (list[j].getlost() < list[min].getlost()) {
-                            min = j;
-                        }
-                    }
-                } else {
-                    if (list[j].getwins() > list[min].getwins()) {
-                        min = j;
-                    }
+                if (list[j].compareTo(list[min]) > -1) {
+                    min = j;
                 }
             }
             Details temp = list[i];
