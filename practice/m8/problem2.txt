@@ -1,3 +1,4 @@
+
 array = [e,a,s,y,q,u,e,s,t,i,o,n] i = 0, j = i
 sort(sublist(a[0,j])), i++
 
