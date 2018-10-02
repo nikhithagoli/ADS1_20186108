@@ -94,7 +94,7 @@ final class Solution {
     /**
      * sorts.
      *
-     * best case: O(n^2)
+     * best case: O(n)
      * worst case: O(n^2)
      * average case: O(n^2)
      *
@@ -122,7 +122,7 @@ final class Solution {
                         min = j;
                     }
                 }
-                if((min == j - 1)){
+                if (min == j - 1) {
                     break;
                 }
                 Details temp = list[j - 1];
