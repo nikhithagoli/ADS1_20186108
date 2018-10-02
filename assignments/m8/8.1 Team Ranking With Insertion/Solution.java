@@ -100,9 +100,10 @@ final class Solution {
      * 
      * @param      list  The list
      *
+     * @param      n  The size
      * @return     { description_of_the_return_value }
      */
-    static Details[] selectionsort(Details[] list, int n){
+    static Details[] selectionsort(final Details[] list, final int n){
         for (int  i = 0; i < n; i++) {
             int min = i;
             for (int j = i + 1; j < n; j++) {
