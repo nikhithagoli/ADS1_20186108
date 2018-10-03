@@ -24,7 +24,7 @@ class Mergesort {
      * @param      high     The higher value
      */
     public void merge(final Comparable[] array, final Comparable[] aux,
-        final int low, final int mid, final int high) {
+                      final int low, final int mid, final int high) {
         // assert isSorted(array, lo, mid);
         // assert isSorted(array, mid + 1, hi);
         int i = low;
@@ -46,14 +46,14 @@ class Mergesort {
      * Best case: O(log N)
      * Average case : O(logN)
      * worst case :O(log N)
-     * 
+     *
      * @param      array  The array
      * @param      aux    The auxiliary array
      * @param      low     The lower value
      * @param      high     The higher value
      */
     public void sort(final Comparable[] array, final Comparable[] aux,
-        final int low, final int high) {
+                     final int low, final int high) {
         if (high <= low + cutoff) {
             insertionSort(aux, low, high);
             System.out.println("Insertion sort method invoked...");
@@ -74,11 +74,11 @@ class Mergesort {
     }
     /**
      * Rearranges the array in ascending order.
-     * 
+     *
      * Best case: O(1)
      * Average case : O(1)
      * worst case :O(1)
-     * 
+     *
      * @param      array     {Comparable array}.
      */
     public void sort(final Comparable[] array) {
@@ -87,17 +87,17 @@ class Mergesort {
     }
     /**
      * insertion sorting method.
-     * 
+     *
      * Best case: O(N)
      * Average case : O(N^2/2)
      * worst case :O(N^2)
-     * 
+     *
      * @param      array     array.
      * @param      low    start
      * @param      high    high
      */
     public void insertionSort(final Comparable[] array,
-        final int low, final int high) {
+                              final int low, final int high) {
         for (int i = low; i <= high; i++) {
             for (int j = i; j > low && less(array[j], array[j - 1]); j--) {
                 swap(array, j, j - 1);
@@ -106,28 +106,28 @@ class Mergesort {
     }
     /**
      * swaps the value.
-     * 
+     *
      * Best case: O(1)
      * Average case : O(1)
      * worst case :O(1)
-     * 
+     *
      * @param      array   list
      * @param      i     {Integer i}
      * @param      j     {Integer j}
      */
     public void swap(final Comparable[] array,
-        final int i, final int j) {
+                     final int i, final int j) {
         Comparable temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
     /**
      * checks if a is less than b or not.
-     * 
+     *
      * Best case: O(1)
      * Average case : O(1)
      * worst case :O(1)
-     * 
+     *
      * @param      a     {Comparable}.
      * @param      b     {Comparable}.
      *
@@ -138,11 +138,11 @@ class Mergesort {
     }
     /**
      * the array is sorted (or) not.
-     * 
+     *
      * Best case: O(1)
      * Average case : O(1)
      * worst case :O(1)
-     * 
+     *
      * @param      array     list
      *
      * @return     boolean.
@@ -152,11 +152,11 @@ class Mergesort {
     }
     /**
      * array sorted or not.
-     * 
+     *
      * Best case: O(1)
      * Average case : O(n)
      * worst case :O(N).
-     * 
+     *
      * @param      array    list
      * @param      low    The start
      * @param      high    The end
@@ -164,7 +164,7 @@ class Mergesort {
      * @return     boolean.
      */
     public boolean isSorted(final Comparable[] array,
-        final int low, final int high) {
+                            final int low, final int high) {
         for (int i = low + 1; i <= high; i++) {
             if (less(array[i], array[i - 1])) {
                 return false;
@@ -174,7 +174,7 @@ class Mergesort {
     }
     /**
      * prints the elements in the array.
-     * 
+     *
      * Best case: O(n)
      * Worst case: O(n)
      * Average case: O(n)
@@ -198,7 +198,7 @@ class Mergesort {
 public final class Solution {
     /**
      * Constructs the object.
-     * 
+     *
      */
     private Solution() {
         //Unused Constructor.
