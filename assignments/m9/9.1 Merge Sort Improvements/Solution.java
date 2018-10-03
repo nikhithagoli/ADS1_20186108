@@ -19,14 +19,12 @@ class Mergesort {
      * Time complexity of this method is O(N).
      * @param      array  The array
      * @param      aux    The auxiliary
-     * @param      low     The lower value
+     * @param      low    start
      * @param      mid    The middle value
-     * @param      high     The higher value
+     * @param      high    high
      */
     public void merge(final Comparable[] array, final Comparable[] aux,
                       final int low, final int mid, final int high) {
-        // assert isSorted(array, lo, mid);
-        // assert isSorted(array, mid + 1, hi);
         int i = low;
         int j = mid + 1;
         for (int k = low; k <= high; k++) {
