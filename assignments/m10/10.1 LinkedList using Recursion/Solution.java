@@ -1,28 +1,5 @@
 import java.util.Scanner;
 /**
- * Class for node.
- */
-class Node {
-    /**
-     * node data.
-     */
-    String data;
-    /**
-     * next node link.
-     */
-    Node next;
-    /**
-     * node constructor.
-     *
-     * @param      value  The value
-     * @param      link   The link
-     */
-    Node(final String value, final Node link) {
-        this.data = value;
-        this.next = link;
-    }
-}
-/**
  * Class for linkedlist.
  */
 class Linkedlist {
@@ -37,6 +14,29 @@ class Linkedlist {
     /**
      * Constructs the object.
      */
+    /**
+     * Class for node.
+    */
+    class Node {
+        /**
+        * node data.
+        */
+        private String data;
+        /**
+        * next node link.
+        */
+        private Node next;
+        /**
+         * node constructor.
+         *
+         * @param      value  The value
+         * @param      link   The link
+         */
+        Node(final String value, final Node link) {
+            this.data = value;
+            this.next = link;
+        }
+    }
     Linkedlist() {
         noOfElements = 0;
         head = null;

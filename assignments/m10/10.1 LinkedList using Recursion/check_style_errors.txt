@@ -1,5 +1,4 @@
 Starting audit...
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:9:12: Variable 'data' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:13:10: Variable 'next' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:40:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.
