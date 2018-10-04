@@ -10,7 +10,7 @@ class Linkedlist {
     /**
      * nodes.
      */
-    private Node head, last, temp;
+    private Node head, temp;
     /**
      * Class for node.
     */
