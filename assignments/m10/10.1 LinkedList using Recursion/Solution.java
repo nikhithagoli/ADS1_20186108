@@ -12,9 +12,6 @@ class Linkedlist {
      */
     private Node head, last, temp;
     /**
-     * Constructs the object.
-     */
-    /**
      * Class for node.
     */
     class Node {
@@ -37,6 +34,9 @@ class Linkedlist {
             this.next = link;
         }
     }
+    /**
+     * Constructs the object.
+     */
     Linkedlist() {
         noOfElements = 0;
         head = null;
