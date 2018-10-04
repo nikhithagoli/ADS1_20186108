@@ -1,0 +1,26 @@
+function Strng print(String str){
+
+	if(str.length() == 0){
+		return;
+
+	} else if(str.length() == 1) {
+		return str.charAt(0);
+
+	} else if(str.charAt(0) != str.charAt(1)){
+		return str.charAt(0) +print( str.substring(1));
+	}
+	
+	return str.charAt(0) + '*' + print(str.substring(1));
+}
+
+
+str == hello
+s[0] == h, s[1] == e --->  s[0] != s[1] ---> h + print(ello) 					---> hel*lo
+
+s[0] == e, s[1] == l --->  s[0] != s[1] ---> e + print(llo) 			---> el*lo
+
+s[0] == l, s[1] == l --->  s[0] == s[1] ---> l* + print(lo) 	---> l*lo
+
+s[0] == l, s[1] == o --->  s[0] != s[1] ---> l + print(o) ---> lo
+
+s,length == 1 ---> o
