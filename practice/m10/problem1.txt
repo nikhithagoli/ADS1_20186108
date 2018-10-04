@@ -1,0 +1,19 @@
+function int factorial(int n){
+	if (n == 1){
+	return 1;
+	} 
+	return n* factorial(n-1);
+}
+
+for example:
+n = 5
+
+factorila(5) --> 5 != 1 --> 5 * factorial(4)													 ---> 5 * 24 ---> 120
+
+factorila(4) --> 4 != 1 --> 4 * factorial(3) 									--> 4 * 6 ---> 24
+
+factorila(3) --> 3 != 1 --> 3 * factorial(2) 					--> 3 * 2 ---> 6
+
+factorila(2) --> 2 != 1 --> 2 * factorial(1) ---> 2 * 1 ---> 2     
+												
+factorila(1) --> 1 == 1 --> 1                  
