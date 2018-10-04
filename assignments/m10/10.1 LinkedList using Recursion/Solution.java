@@ -25,11 +25,11 @@ class Linkedlist {
         private Node next;
         /**
          * node constructor.
-         * 
+         *
          * Best case: O(1)
          * worst case O(1)
          * Average case:  O(1)
-         * 
+         *
          * @param      value  The value
          * @param      link   The link
          */
@@ -40,11 +40,11 @@ class Linkedlist {
     }
     /**
      * Constructs the object.
-     * 
+     *
      * Best case: O(1)
      * worst case O(1)
      * Average case:  O(1)
-     * 
+     *
      */
     Linkedlist() {
         noOfElements = 0;
@@ -52,11 +52,11 @@ class Linkedlist {
     }
     /**
      * insert at a position.
-     * 
+     *
      * Best case: O(1)
          * worst case O(1)
          * Average case:  O(1)
-         * 
+         *
      * @param      position   The position
      * @param      value      The value
      *
@@ -71,11 +71,11 @@ class Linkedlist {
     }
     /**
      * inserts after a node at a given position.
-     * 
+     *
      *  Best case: O(1)
          * worst case O(N)
          * Average case:  O(N)
-         * 
+         *
      * @param      position   The position
      * @param      first      The first
      * @param      temp1       The temporary
@@ -86,7 +86,7 @@ class Linkedlist {
      * @throws     Exception  { exception_description }
      */
     Node insertAfter(final int position, final Node first,
-     final Node temp1, final int count) throws Exception {
+                     final Node temp1, final int count) throws Exception {
         temp = temp1;
         if (position == count) {
             temp.next = first;
@@ -98,11 +98,11 @@ class Linkedlist {
     }
     /**
      * to reverse a linked list.
-     * 
+     *
      * Best case: O(1)
          * worst case O(1)
          * Average case:  O(1)
-         * 
+         *
      */
     void reverse() {
         reverse(null, head);
@@ -112,7 +112,7 @@ class Linkedlist {
      * Best case: O(1)
          * worst case O(N)
          * Average case:  O(N)
-         * 
+         *
      * @param      prev  The previous
      * @param      curr  The curr
      */
@@ -129,7 +129,7 @@ class Linkedlist {
      *  Best case: O(1)
          * worst case O(N)
          * Average case:  O(N)
-         * 
+         *
      * @return     { description_of_the_return_value }
      */
     String print() {
