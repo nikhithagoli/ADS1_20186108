@@ -7,6 +7,7 @@ class Node {
         this.next = link;
     }
 }
+
 class Linkedlist {
     private int noOfElements;
     private Node head, last, temp;
@@ -14,27 +15,7 @@ class Linkedlist {
         noOfElements = 0;
         head = null;
     }
-    /*Node insertAt(int position, String value){
-        if(position == 0){
-            return head;
-        } else if(position == 1){
-            return head;
-        }
-        return insertAt(position-1, value);
-    }
-    void insertAfter(Node newnode, String value){
-        Node temp = new Node();
-        if(newnode == null){
-            temp.data= value;
-            temp.next = newnode;
-            head = temp;
-        }else{
-            temp.next = newnode.next;
-            temp.data= value;
-            newnode.next = temp;
-        }
 
-    }*/
     void insertAt(int position, String value)throws Exception {
         if (position < 0 || position > noOfElements) {
             throw new Exception();
@@ -48,7 +29,7 @@ class Linkedlist {
             noOfElements++;
             return temp;
         }
-        first.next = insertAfter(position, first.next, temp, count++);
+        first.next = insertAfter(position, first.next, temp, count+1);
         return first;
     }
     void reverse() {
@@ -63,7 +44,7 @@ class Linkedlist {
         }
     }
     String print() {
-        Node temp = head;
+        temp = head;
         String str = "";
         while (temp != null) {
             str += temp.data + ", ";
@@ -101,8 +82,3 @@ class Solution {
         }
     }
 }
-
-
-
-
-
