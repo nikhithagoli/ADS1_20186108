@@ -61,14 +61,16 @@ class Linkedlist {
      *
      * @param      position   The position
      * @param      first      The first
-     * @param      temp       The temporary
+     * @param      temp1       The temporary
      * @param      count      The count
      *
      * @return     { description_of_the_return_value }
      *
      * @throws     Exception  { exception_description }
      */
-    Node insertAfter(final int position, final Node first, final Node temp, final int count) throws Exception {
+    Node insertAfter(final int position, final Node first,
+     final Node temp1, final int count) throws Exception {
+        temp = temp1;
         if (position == count) {
             temp.next = first;
             noOfElements++;
@@ -120,7 +122,7 @@ final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //constructor.
     }
     /**
@@ -150,6 +152,8 @@ final class Solution {
                 } catch (Exception e) {
                     System.out.println("No elements to reverse.");
                 }
+                break;
+            default:
                 break;
             }
         }

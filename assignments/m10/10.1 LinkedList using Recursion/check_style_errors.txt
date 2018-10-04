@@ -1,9 +1,5 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:9:12: Variable 'data' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:13:10: Variable 'next' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:71: Line is longer than 80 characters (found 111). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:71:71: 'temp' hides a field. [HiddenField]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:123:23: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:136: switch without "default" clause. [MissingSwitchDefault]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 2 errors.
