@@ -29,7 +29,7 @@ class Linkedlist {
             noOfElements++;
             return temp;
         }
-        first.next = insertAfter(position, first.next, temp, count+1);
+        first.next = insertAfter(position, first.next, temp, count + 1);
         return first;
     }
     void reverse() {

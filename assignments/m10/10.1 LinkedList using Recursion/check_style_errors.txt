@@ -21,8 +21,6 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:26:48: Parameter temp should be final. [FinalParameters]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:26:53: 'temp' hides a field. [HiddenField]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:26:59: Parameter count should be final. [FinalParameters]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:32:67: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:32:68: '+' is not followed by whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:35:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:38:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:38:18: Parameter prev should be final. [FinalParameters]
@@ -34,4 +32,4 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:58:29: Parameter args should be final. [FinalParameters]
 [ERROR] E:\basic\ADS1_20186108\assignments\m10\10.1 LinkedList using Recursion\Solution.java:63: switch without "default" clause. [MissingSwitchDefault]
 Audit done.
-Checkstyle ends with 34 errors.
+Checkstyle ends with 32 errors.
