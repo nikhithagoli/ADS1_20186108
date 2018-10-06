@@ -116,9 +116,10 @@ class Details {
      */
     int getage() {
         int age = 0;
+        int year = 2018, days =365, month = 30, ten = 10;
         String[] token = this.getdob().split("-");
-        age += (2018 - Integer.parseInt(token[2])) * 365;
-        age += (10 - Integer.parseInt(token[1])) * 30;
+        age += (year - Integer.parseInt(token[2])) * days;
+        age += (ten - Integer.parseInt(token[1])) * month;
         age += Integer.parseInt(token[0]);
 
         return age;
@@ -162,8 +163,8 @@ class Details {
      * @return     { description_of_the_return_value }
      */
     String print() {
-        return this.getname() + "," + this.gettotal() + "," + 
-        this.getcategory();
+        return this.getname() + "," + this.gettotal() + ","
+        + this.getcategory();
     }
 }
 /**
@@ -230,10 +231,11 @@ final class Solution {
         Details[] students = new Details[n];
         for (int i = 0; i < n; i++) {
             String[] input = scan.nextLine().split(",");
-            students[i] = new Details(input[0], input[1], Integer.parseInt(input[2]),
-                Integer.parseInt(input[2+1]),
-                Integer.parseInt(input[2+2]),
-                Integer.parseInt(input[2+2+1]), input[2+2+2]);
+            students[i] = new Details(input[0], input[1],
+                 Integer.parseInt(input[2]),
+                Integer.parseInt(input[2 + 1]),
+                Integer.parseInt(input[2 + 2]),
+                Integer.parseInt(input[2 + 2 + 1]), input[2 + 2 + 2]);
         }
         students = selectionsort(students, n);
         for (int i = 0; i < n; i++) {
