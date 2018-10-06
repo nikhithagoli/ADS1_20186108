@@ -66,11 +66,11 @@ class Details {
     }
     /**
      * get dob.
-     * 
+     *
      *  Best case: O(1)
      *  worst case: O(1)
      *  Average case: O(1)
-     *  
+     *
      * @return     { description_of_the_return_value }
      */
     String getdob() {
@@ -218,7 +218,7 @@ final class Solution {
     }
     /**
      * sorts.
-     *  
+     *
      *  Best case: O(N^2)
      *  worst case: O(N^2)
      *  Average case: O(N^2)
