@@ -1,4 +1,7 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:69: Line has trailing spaces. [RegexpSingleline]
+[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:73: Line has trailing spaces. [RegexpSingleline]
+[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:221: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 4 errors.

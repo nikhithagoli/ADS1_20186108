@@ -56,6 +56,9 @@ class Details {
     /**
      * get name.
      *
+     *Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     String getname() {
@@ -63,7 +66,11 @@ class Details {
     }
     /**
      * get dob.
-     *
+     * 
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
+     *  
      * @return     { description_of_the_return_value }
      */
     String getdob() {
@@ -71,7 +78,9 @@ class Details {
     }
     /**
      * get s1.
-     *
+     * Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     int getsubject1() {
@@ -87,7 +96,9 @@ class Details {
     }
     /**
      * s3.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     int getsubject3() {
@@ -95,7 +106,9 @@ class Details {
     }
     /**
      * total.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     int gettotal() {
@@ -103,7 +116,9 @@ class Details {
     }
     /**
      * cat.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     String getcategory() {
@@ -111,7 +126,9 @@ class Details {
     }
     /**
      * get age.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     int getage() {
@@ -126,7 +143,9 @@ class Details {
     }
     /**
      * compare.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @param      that  The that
      *
      * @return     { description_of_the_return_value }
@@ -159,7 +178,9 @@ class Details {
     }
     /**
      * prints.
-     *
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     String print() {
@@ -182,7 +203,9 @@ final class Solution {
      *
      * @param      arr   The arr
      * @param      val   The value
-     *
+     * Best case: O(1)
+     *  worst case: O(N)
+     *  Average case: O(N)
      * @return     { description_of_the_return_value }
      */
     static boolean contains(final int[] arr, final int val) {
@@ -195,7 +218,10 @@ final class Solution {
     }
     /**
      * sorts.
-     *
+     *  
+     *  Best case: O(N^2)
+     *  worst case: O(N^2)
+     *  Average case: O(N^2)
      * @param      students  The students
      * @param      n         { parameter_description }
      *
@@ -249,17 +275,14 @@ final class Solution {
         int i = 0;
         for (int k = open; k < n; k++) {
             if (students[k].getcategory().equals("BC") && bc > 0) {
-                //System.out.println(students[k].print());
                 indices[i++] = k;
                 bc--;
             } else if (students[k].getcategory().
                 equals("SC") && sc > 0) {
-                //System.out.println(students[k].print());
                 indices[i++] = k;
                 sc--;
             } else if (students[k].getcategory().
                 equals("ST") && st > 0) {
-                //System.out.println(students[k].print());
                 indices[i++] = k;
                 st--;
             }
