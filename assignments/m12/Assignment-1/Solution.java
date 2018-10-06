@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 class Details{
 	private String name;
 	private String dob;
@@ -84,6 +85,14 @@ class Details{
     }
 }
 class Solution{
+	static boolean contains(int[] arr, int val){
+		for (int n : arr) {
+         if (val == n) {
+            return true;
+         }
+      }
+      return false;
+	}
 	static Details[] selectionsort(final Details[] students, final int n) {
         for (int  i = 0; i < n; i++) {
             int min = i;
@@ -121,18 +130,59 @@ class Solution{
 		for(int j = 0; j < open; j++){
 			System.out.println(students[j].print());
 		}
-					
+		int[] indices = new int[bc + sc + st];
+		int i = 0;
 		for(int k = open; k < n; k++){
 			if(students[k].getcategory().equals("BC") && bc > 0){
-				System.out.println(students[k].print());
+				//System.out.println(students[k].print());
+				indices[i++] = k;
 				bc--;
 			} else if(students[k].getcategory().equals("SC") && sc > 0){
-				System.out.println(students[k].print());
+				//System.out.println(students[k].print());
+				indices[i++] = k;
 				sc--;
 			} else if(students[k].getcategory().equals("ST") && st > 0){
-				System.out.println(students[k].print());
+				//System.out.println(students[k].print());
+				indices[i++] = k;
 				st--;
 			}
+		}
+		if(bc > 0){
+			for(int k = open; k < n; k++){
+				if(students[k].getcategory().equals("Open") && bc > 0){
+				//System.out.println(students[k].print());
+					if(!contains(indices, k)){
+						indices[i++] = k;
+					bc--;
+					}
+				}
+			}
+		}
+		if(sc > 0){
+			for(int k = open; k < n; k++){
+				if(students[k].getcategory().equals("Open") && sc > 0){
+				//System.out.println(students[k].print());
+					if(!contains(indices, k)){
+						indices[i++] = k;
+						sc--;
+					}
+				}
+			}
+		}
+		if(st > 0){
+			for(int k = open; k < n; k++){
+				if(students[k].getcategory().equals("Open") && st > 0){
+				//System.out.println(students[k].print());
+					if(!contains(indices, k)){
+						indices[i++] = k;
+						st--;
+					}
+				}
+			}
+		}
+		Arrays.sort(indices);
+		for(int k = 0; k < indices.length; k++){
+			System.out.println(students[indices[k]].print());
 		}
 	}
 }
