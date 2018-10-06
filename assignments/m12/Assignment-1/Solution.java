@@ -116,7 +116,7 @@ class Details {
      */
     int getage() {
         int age = 0;
-        int year = 2018, days =365, month = 30, ten = 10;
+        final int year = 2018, days = 365, month = 30, ten = 10;
         String[] token = this.getdob().split("-");
         age += (year - Integer.parseInt(token[2])) * days;
         age += (ten - Integer.parseInt(token[1])) * month;

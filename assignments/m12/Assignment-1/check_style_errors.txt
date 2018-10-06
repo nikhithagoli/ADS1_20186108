@@ -1,9 +1,4 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:119:20: '2018' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:119:32: '365' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:119:32: '=' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:119:45: '30' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m12\Assignment-1\Solution.java:119:55: '10' is a magic number. [MagicNumber]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 1 errors.
