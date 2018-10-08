@@ -1,114 +1,80 @@
 import java.util.Scanner;
+
 /**
- * Class for solution.
+ * Class for quicksort.
  */
-public final class Solution {
-    /**
-     * checkstyle purpose Constructs the object.
-     */
-    private Solution() {
-
-    }
-    /**
-     * main maethod starts here.
-     *
-     * @param      args  The arguments
-     */
-    public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
-        int noOfTestcases = input.nextInt();
-        // System.out.println();
-        for (int i = 0; i < noOfTestcases; i++) {
-            int pivot = input.nextInt();
-            input.nextLine();
-            String elements = input.nextLine();
-            Quick array = new Quick();
-            String[] elearr = elements.split(" ");
-            array.sort(elearr, pivot);
-            // System.out.println(array.show(elearr));
-            array.show(elearr);
-            System.out.println();
-
-
-
-        }
-    }
-}
-/**
- * Class for quick.
- */
-class Quick {
+class Quicksort {
 
     /**
      * Constructs the object.
      */
-    protected Quick() {
+    protected Quicksort () {
         /**
-         * { item_description }
+         * empty.
          */
     }
 
     /**
      * sort function.
      *
-     * @param      a      { parameter_description }
-     * @param      pivot  The pivot
+     * @param      array      { parameter_description }
+     * @param      pi  The pivot
      */
-    public static void sort(final Comparable[] a, final int pivot) {
-        sort(a, 0, a.length - 1, pivot);
-        assert isSorted(a);
+    public static void sort(final Comparable[] array, final int pi) {
+        sort(array, 0, array.length - 1, pi);
+        assert isSorted(array);
     }
 
     /**
      * sort function.
      *
-     * @param      a      { parameter_description }
-     * @param      lo     The lower
-     * @param      hi     The higher
-     * @param      pivot  The pivot
+     * @param      array      { parameter_description }
+     * @param      low     The lower
+     * @param      high     The higher
+     * @param      pi  The pivot
      */
     private static void sort(
-        final Comparable[] a, final int lo, final int hi, final int pivot) {
-        if (hi <= lo + pivot - 1) {
+        final Comparable[] array, final int low, final int high, final int pi) {
+        if (high <= low + pi - 1) {
             System.out.println("insertionSort called");
-            insertionSort(a, lo, hi);
+            insertionSort(array, low, high);
             return;
         }
 
-        if (hi <= lo) {
+        if (high <= low) {
             return;
         }
-        int j = partition(a, lo, hi);
-        sort(a, lo, j - 1, pivot);
-        sort(a, j + 1, hi, pivot);
-        assert isSorted(a, lo, hi);
+        int j = partition(array, low, high);
+        sort(array, low, j - 1, pi);
+        sort(array, j + 1, high, pi);
+        assert isSorted(array, low, high);
     }
     /**
      * partition function.
      *
-     * @param      a     { parameter_description }
-     * @param      lo    The lower
-     * @param      hi    The higher
+     * @param      array     { parameter_description }
+     * @param      low    The lower
+     * @param      high    The higher
      *
      * @return     { description_of_the_return_value }
      */
     private static int partition(
-        final Comparable[] a, final int lo, final int hi) {
-        int i = lo;
-        int j = hi + 1;
-        Comparable v = a[lo];
+        final Comparable[] array, final int low, final int high) {
+        int i = low;
+        int j = high + 1;
+        Comparable v = array[low];
         while (true) {
 
             // find item on lo to swap
-            while (less(a[++i], v)) {
-                if (i == hi) {
+            while (less(array[++i], v)) {
+                if (i == high) {
                     break;
                 }
             }
 
             // find item on hi to swap
-            while (less(v, a[--j])) {
-                if (j == lo) {
+            while (less(v, array[--j])) {
+                if (j == low) {
 
                     break;
                 }
@@ -120,12 +86,12 @@ class Quick {
                 break;
             }
 
-            exch(a, i, j);
+            exch(array, i, j);
         }
 
         // put partitioning item v at a[j]
-        exch(a, lo, j);
-        show(a);
+        exch(array, low, j);
+        show(array);
         System.out.println();
 
         // now, a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
@@ -134,30 +100,30 @@ class Quick {
 
     /**.
      *
-     * @param  a the array
+     * @param  array the array
      * @param  k the rank of the key
      * @return the key of rank {@code k}
      * @throws IllegalArgumentException unless {@code 0 <= k < a.length}
      */
-    public static Comparable select(final Comparable[] a, final int k) {
-        if (k < 0 || k >= a.length) {
+    public static Comparable select(final Comparable[] array, final int k) {
+        if (k < 0 || k >= array.length) {
             throw new IllegalArgumentException(
-                "index is not between 0 and " + a.length + ": " + k);
+                "index is not between 0 and " + array.length + ": " + k);
         }
         // StdRandom.shuffle(a);
-        int lo = 0, hi = a.length - 1;
-        while (hi > lo) {
+        int low = 0, high = array.length - 1;
+        while (high > low) {
 
-            int i = partition(a, lo, hi);
+            int i = partition(array, low, high);
             if (i > k) {
-                hi = i - 1;
+                high = i - 1;
             } else if (i < k) {
-                lo = i + 1;
+                low = i + 1;
             } else {
-                return a[i];
+                return array[i];
             }
         }
-        return a[lo];
+        return array[low];
     }
 
 
@@ -188,22 +154,22 @@ class Quick {
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
-    private static void exch(final Object[] a, final int i, final int j) {
-        Object swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
+    private static void exch(final Object[] array, final int i, final int j) {
+        Object temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
 
     /**
      * isorted function.
      *
-     * @param      a     { parameter_description }
+     * @param      array     { parameter_description }
      *
      * @return     True if sorted, False otherwise.
      */
-    private static boolean isSorted(final Comparable[] a) {
-        return isSorted(a, 0, a.length - 1);
+    private static boolean isSorted(final Comparable[] array) {
+        return isSorted(array, 0, array.length - 1);
     }
     /**
      * Determines if sorted.
@@ -256,4 +222,40 @@ class Quick {
         }
     }
 
+}
+
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * contructor.
+     */
+    private Solution() {
+
+    }
+    /**
+     * main maethod starts here.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        int noOfTestcases = input.nextInt();
+        // System.out.println();
+        for (int i = 0; i < noOfTestcases; i++) {
+            int pivot = input.nextInt();
+            input.nextLine();
+            String elements = input.nextLine();
+            Quick array = new Quick();
+            String[] elearr = elements.split(" ");
+            array.sort(elearr, pivot);
+            // System.out.println(array.show(elearr));
+            array.show(elearr);
+            System.out.println();
+
+
+
+        }
+    }
 }
