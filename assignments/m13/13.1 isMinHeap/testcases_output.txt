@@ -1,0 +1,72 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+true
+false
+true
+false
+Your Output: 
+true
+false
+true
+false
+----------------------------------------
+########## Testcase 1: Passed ##########
+Expected Output: 
+false
+false
+false
+false
+false
+false
+Your Output: 
+false
+false
+false
+false
+false
+false
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+true
+true
+true
+false
+false
+false
+true
+false
+Your Output: 
+true
+false
+false
+false
+true
+false
+false
+false
+----------------------------------------
+########## Testcase 3: Failed ##########
+Expected Output: 
+true
+false
+false
+Your Output: 
+false
+false
+false
+----------------------------------------
+########## Testcase 4: Failed ##########
+Expected Output: 
+true
+true
+false
+Your Output: 
+true
+true
+Exception in thread "main" java.lang.NumberFormatException: empty String
+	at sun.misc.FloatingDecimal.readJavaFormatString(Unknown Source)
+	at sun.misc.FloatingDecimal.parseFloat(Unknown Source)
+	at java.lang.Float.parseFloat(Unknown Source)
+	at Solution.main(Solution.java:60)
+----------------------------------------
