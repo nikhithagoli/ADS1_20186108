@@ -1,0 +1,14 @@
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+	modified:   ../../m11/11.1 Cutoff Quicksort to Insertion Sort - updated/git_output.txt
+	modified:   ../../m11/11.1 Cutoff Quicksort to Insertion Sort - updated/result/score.json
+	modified:   ../../m12/Assignment-1/git_output.txt
+	modified:   ../../m12/Assignment-1/result/score.json
+
+Untracked files:
+	../../../practice/m13/
+
+no changes added to commit
