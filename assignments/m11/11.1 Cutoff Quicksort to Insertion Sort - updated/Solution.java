@@ -256,18 +256,16 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
-        int noOfTestcases = input.nextInt();
-        // System.out.println();
+        Scanner sc = new Scanner(System.in);
+        int noOfTestcases = sc.nextInt();
         for (int i = 0; i < noOfTestcases; i++) {
-            int pivot = input.nextInt();
-            input.nextLine();
-            String elements = input.nextLine();
-            Quick array = new Quick();
-            String[] elearr = elements.split(" ");
-            array.sort(elearr, pivot);
-            // System.out.println(array.show(elearr));
-            array.show(elearr);
+            int pivot = sc.nextInt();
+            sc.nextLine();
+            String input = sc.nextLine();
+            Quick q = new Quick();
+            String[] tokens = input.split(" ");
+            q.sort(tokens, pivot);
+            q.show(tokens);
             System.out.println();
 
 
