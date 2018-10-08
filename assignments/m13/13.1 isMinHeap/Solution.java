@@ -1,6 +1,19 @@
 import java.util.Scanner;
 import java.lang.Comparable;
+/**
+ * Class for minheap.
+ */
 class Minheap {
+    /**
+     * Determines if heap.
+     *  Best case: O(1)
+     *  worst case :O(n)
+     *  Average case: O(n)
+     *  
+     * @param      a     { parameter_description }
+     *
+     * @return     True if heap, False otherwise.
+     */
     public boolean isHeap(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             if (2 * i + 1 < a.length && 2 * i + 2 < a.length) {
@@ -13,7 +26,15 @@ class Minheap {
         return true;
     }
 }
+/**
+ * Class for solution.
+ */
 class Solution {
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         int size;
         Scanner sc = new Scanner(System.in);
