@@ -8,7 +8,7 @@ class Quicksort {
     /**
      * Constructs the object.
      */
-    protected Quicksort () {
+    protected Quicksort() {
         /**
          * empty.
          */
@@ -16,7 +16,9 @@ class Quicksort {
 
     /**
      * sort function.
-     *
+     * Best case: O(1)
+     * worst case: O(1)
+     * average case: O(1)
      * @param      array      { parameter_description }
      * @param      pi  The pivot
      */
@@ -27,7 +29,9 @@ class Quicksort {
 
     /**
      * sort function.
-     *
+     *      * Best case: O(N)
+     * worst case: O(N)
+     * average case: O(N)
      * @param      array      { parameter_description }
      * @param      low     The lower
      * @param      high     The higher
@@ -51,7 +55,9 @@ class Quicksort {
     }
     /**
      * partition function.
-     *
+     *      * Best case: O(logN)
+     * worst case: O(N)
+     * average case: O(logN)
      * @param      array     { parameter_description }
      * @param      low    The lower
      * @param      high    The higher
@@ -133,7 +139,9 @@ class Quicksort {
      **********************************************************************/
     /**
      * less function.
-     *
+     *      * Best case: O(1)
+     * worst case: O(1)
+     * average case: O(1)
      * @param      v     { parameter_description }
      * @param      w     { parameter_description }
      *
@@ -149,8 +157,10 @@ class Quicksort {
 
     /**
      * exchanges the elements.
-     *
-     * @param      a     { parameter_description }
+     *      * Best case: O(1)
+     * worst case: O(1)
+     * average case: O(1)
+     * @param      array     { parameter_description }
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
@@ -163,7 +173,9 @@ class Quicksort {
 
     /**
      * isorted function.
-     *
+     *      * Best case: O(1)
+     * worst case: O(1)
+     * average case: O(1)
      * @param      array     { parameter_description }
      *
      * @return     True if sorted, False otherwise.
@@ -173,7 +185,9 @@ class Quicksort {
     }
     /**
      * Determines if sorted.
-     *
+     *      * Best case: O(1)
+     * worst case: O(N)
+     * average case: O(N)
      * @param      a     { parameter_description }
      * @param      lo    The lower
      * @param      hi    The higher
@@ -194,7 +208,9 @@ class Quicksort {
 
     /**
      * show the array.
-     *
+     *      * Best case: O(1)
+     * worst case: O(N)
+     * average case: O(N)
      * @param      a     { parameter_description }
      */
     public  static void show(final Comparable[] a) {
