@@ -135,8 +135,6 @@ class Quicksort{
             }
             swap(array, low, j);
             System.out.println(Arrays.toString(array));
-        } else {
-            System.out.println("[]");
         }
         return j;
     }
@@ -167,7 +165,11 @@ public final class Solution {
         	int m = sc.nextInt();
         	sc.nextLine();
             String[] input = sc.nextLine().split(" ");
-            quick.sort(input, m);
+            if(input.length == 0){
+                System.out.println("[]");
+            } else{
+                quick.sort(input, m);
+            }
         }
     }
 }
