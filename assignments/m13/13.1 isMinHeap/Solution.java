@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.lang.Comparable;
 /**
  * Class for minheap.
  */
@@ -9,15 +8,16 @@ class Minheap {
      *  Best case: O(1)
      *  worst case :O(n)
      *  Average case: O(n)
-     *  
+     *
      * @param      a     { parameter_description }
      *
      * @return     True if heap, False otherwise.
      */
-    public boolean isHeap(Comparable[] a) {
+    public boolean isHeap(final Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             if (2 * i + 1 < a.length && 2 * i + 2 < a.length) {
-                if (a[i].compareTo(a[2 * i + 1]) > 0 || a[i].compareTo(a[2 * i + 2]) > 0) {
+                if (a[i].compareTo(a[2 * i + 1]) > 0
+                 || a[i].compareTo(a[2 * i + 2]) > 0) {
                     return false;
                 }
             }
@@ -31,11 +31,17 @@ class Minheap {
  */
 class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution(){
+
+    }
+    /**
      * main.
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         int size;
         Scanner sc = new Scanner(System.in);
         String type = sc.nextLine();
@@ -44,9 +50,9 @@ class Solution {
         sc.nextLine();
         for (int i = 0; i < nooftestcases; i++) {
             String line = sc.nextLine();
-            if(line.length() == 0){
+            if (line.length() == 0) {
                 System.out.println("false");
-            } else{
+            } else {
                 String[] input = line.split(",");
                 switch (type) {
                 case "String":
@@ -72,7 +78,6 @@ class Solution {
                         floatheap[size++] = Float.parseFloat(input[j]);
                     }
                     System.out.println(m.isHeap(floatheap));
-                     
                     break;
                 case "Double":
                     size = 0;
@@ -82,11 +87,10 @@ class Solution {
                     }
                     System.out.println(m.isHeap(doubleheap));
                     break;
-
-
+                default:
+                    break;
                 }
             }
-            
         }
     }
 }

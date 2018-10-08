@@ -1,18 +1,6 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:2:1: Redundant import from the java.lang package - java.lang.Comparable. [RedundantImport]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:2:8: Unused import - java.lang.Comparable. [UnusedImports]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:12: Line has trailing spaces. [RegexpSingleline]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:17:27: Parameter a should be final. [FinalParameters]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:20: Line is longer than 80 characters (found 91). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:32:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:38:29: Parameter args should be final. [FinalParameters]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:47:15: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:47:35: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:49:19: 'else' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:49:19: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:51: switch without "default" clause. [MissingSwitchDefault]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:75: Line has trailing spaces. [RegexpSingleline]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:89: Line has trailing spaces. [RegexpSingleline]
+[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:32: Class Solution should be declared as final. [FinalClass]
+[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:36:23: '{' is not preceded with whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 15 errors.
+Checkstyle ends with 3 errors.
