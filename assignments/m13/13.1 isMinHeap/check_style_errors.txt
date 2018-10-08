@@ -11,8 +11,8 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:17:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:17:29: Parameter args should be final. [FinalParameters]
 [ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:26: switch without "default" clause. [MissingSwitchDefault]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:49:19: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:49:30: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:44:19: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:44:38: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:53: Line has trailing spaces. [RegexpSingleline]
 Audit done.
 Checkstyle ends with 15 errors.

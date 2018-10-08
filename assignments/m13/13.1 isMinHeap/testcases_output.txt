@@ -68,5 +68,5 @@ Exception in thread "main" java.lang.NumberFormatException: empty String
 	at sun.misc.FloatingDecimal.readJavaFormatString(Unknown Source)
 	at sun.misc.FloatingDecimal.parseFloat(Unknown Source)
 	at java.lang.Float.parseFloat(Unknown Source)
-	at Solution.main(Solution.java:47)
+	at Solution.main(Solution.java:48)
 ----------------------------------------

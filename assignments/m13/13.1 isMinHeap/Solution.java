@@ -41,12 +41,12 @@ class Solution {
                 System.out.println(m.isHeap(intheap));
                 break;
             case "Float":
-                size = 0;
-                Float[] floatheap = new Float[input.length];
-                for (int j = 0; j < input.length; j++) {
-                    floatheap[size++] = Float.parseFloat(input[j]);
-                }
-                if(size != 0){
+                if(input.length != 0){
+                    size = 0;
+                    Float[] floatheap = new Float[input.length];
+                    for (int j = 0; j < input.length; j++) {
+                        floatheap[size++] = Float.parseFloat(input[j]);
+                    }
                     System.out.println(m.isHeap(floatheap));
                 } else {
                     System.out.println("false");
