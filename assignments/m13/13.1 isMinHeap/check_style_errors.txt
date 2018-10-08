@@ -1,6 +1,2 @@
 Starting audit...
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:32: Class Solution should be declared as final. [FinalClass]
-[ERROR] E:\basic\ADS1_20186108\assignments\m13\13.1 isMinHeap\Solution.java:36:23: '{' is not preceded with whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 3 errors.
