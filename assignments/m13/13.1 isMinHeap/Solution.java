@@ -1,72 +1,60 @@
 import java.util.Scanner;
 import java.lang.Comparable;
-class Minheap<E> {
-	private int i;
-	private int j;
-	private E[] array;
-	private int size; 
-	public Minheap(int n){
-		array = ((E[])new Object[n]);
-		size = 0;
-	}
-	 public void add(E item) {
-        //Inserts the specified element at the end of the list.
-        //You can modify the code in this method.
-        array[(size++)] = item;
-    }
-	int less(){
-		String temp1 = array[i].toString();
-        String temp2 = array[j].toString();
-        return temp1.compareTo(temp2);
-		
-	}
-	public boolean swim(){
-		for(int k = 0; k <size; k++){
-			i = k;
-			j = k/2;
-			if(k>1 && less() <= 0){
-				return false;
+class Minheap{
+	public boolean isHeap(Comparable[] a){
+		for(int i = 0; i < a.length; i++){
+			if(2 * i + 1 < a.length && 2 * i + 2 < a.length){
+				if(a[i].compareTo(a[2*i+1]) > 0 || a[i].compareTo(a[2*i + 2]) > 0){
+					return false;
+				}
 			}
+			
 		}
 		return true;
 	}
 }
 class Solution {
 	public static void main(String[] args) {
+		int size;
 		Scanner sc = new Scanner(System.in);
 		String type = sc.nextLine();
 		int nooftestcases = sc.nextInt();
+		Minheap m = new Minheap();
 		sc.nextLine();
 		for(int i = 0; i < nooftestcases; i++){
 			String[] input = sc.nextLine().split(",");
 			switch(type){
 				case "String":
-					Minheap<String> stringheap = new Minheap(input.length);
+					size  = 0; 
+					String[] stringheap = new String[input.length];
 					for(int j = 0; j < input.length; j++){
-						stringheap.add(input[j]);
+						stringheap[size++] = input[j];
 					}
-					System.out.println(stringheap.swim());
+					System.out.println(m.isHeap(stringheap));
 					break;
 				case "Integer":
-					Minheap<Integer> intheap = new Minheap(input.length);
+					size = 0;
+					Integer[] intheap = new Integer[input.length];
 					for(int j = 0; j < input.length; j++){
-						intheap.add(Integer.parseInt(input[j]));
+						intheap[size++] = Integer.parseInt(input[j]);
 					}
-					System.out.println(intheap.swim());
+					System.out.println(m.isHeap(intheap));
 					break;
 				case "Float":
-					Minheap<Float> floatheap = new Minheap(input.length);
+					size = 0;
+					Float[] floatheap = new Float[input.length];
 					for(int j = 0; j < input.length; j++){
-						floatheap.add(Float.parseFloat(input[j]));
+						floatheap[size++] = Float.parseFloat(input[j]);
 					}
-					System.out.println(floatheap.swim());
+					System.out.println(m.isHeap(floatheap));
 					break;
 				case "Double":
-					Minheap<Double> doubleheap = new Minheap(input.length);
+					size = 0;
+					Double[] doubleheap = new Double[input.length];
 					for(int j = 0; j < input.length; j++){
-						doubleheap.add(Double.parseDouble(input[j]));
+						doubleheap[size++] = Double.parseDouble(input[j]);
 					}
-					System.out.println(doubleheap.swim());
+					System.out.println(m.isHeap(doubleheap));
 					break;
 				
 				

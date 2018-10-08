@@ -26,7 +26,7 @@ false
 false
 false
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 true
 true
@@ -38,21 +38,21 @@ true
 false
 Your Output: 
 true
+true
+true
 false
 false
 false
 true
-false
-false
 false
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 true
 false
 false
 Your Output: 
-false
+true
 false
 false
 ----------------------------------------
@@ -68,5 +68,5 @@ Exception in thread "main" java.lang.NumberFormatException: empty String
 	at sun.misc.FloatingDecimal.readJavaFormatString(Unknown Source)
 	at sun.misc.FloatingDecimal.parseFloat(Unknown Source)
 	at java.lang.Float.parseFloat(Unknown Source)
-	at Solution.main(Solution.java:60)
+	at Solution.main(Solution.java:47)
 ----------------------------------------
