@@ -59,6 +59,7 @@ class Solution {
 			int size = heap.getsize();
 			//System.out.println(size);
 			if((size) % 2 == 0){
+				System.out.println(((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2))/2.0);
 				float median = ((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2))/2;
 				System.out.println(median);
 			} else {
