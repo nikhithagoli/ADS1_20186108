@@ -265,7 +265,7 @@ class Heapsort {
     }
     /**
      * gets item.
-     * 
+     *
      * Best case: O(1)
      *  worst case: O(1)
      *  Average case: O(1)
@@ -278,7 +278,7 @@ class Heapsort {
     }
     /**
      * get size.
-     * 
+     *
      * Best case: O(1)
      *  worst case: O(1)
      *  Average case: O(1)
