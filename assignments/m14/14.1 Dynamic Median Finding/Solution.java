@@ -52,12 +52,10 @@ class Heapsort {
 class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
+		int n = Integer.parseInt(sc.nextLine());
 		Heapsort heap =  new Heapsort(n);
-		sc.nextLine();
 		for(int i = 0; i < n; i++){
-			heap.insert(sc.nextInt());
-			sc.nextLine();
+			heap.insert(Integer.parseInt(sc.nextLine()));
 			int size = heap.getsize();
 			//System.out.println(size);
 			if((size) % 2 == 0){
