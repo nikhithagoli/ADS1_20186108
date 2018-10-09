@@ -8,7 +8,7 @@ class Heapsort {
 		size = 0;
 	}
 	void sort(){
-		for(int i = ((size-1)/2)-1; i>=0; i--){
+		for(int i = (size/2)-1; i>=0; i--){
 			heapify(size, i);
 		}
 		for(int i = size-1; i>=0; i--){
@@ -59,7 +59,8 @@ class Solution {
 			int size = heap.getsize();
 			//System.out.println(size);
 			if((size) % 2 == 0){
-				System.out.println(((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2))/2.0);
+				// System.out.println(heap.getitem((size - 1)/2) + "			" + heap.getitem(size/2));
+				// System.out.println(((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2)));
 				float median = ((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2))/2;
 				System.out.println(median);
 			} else {
