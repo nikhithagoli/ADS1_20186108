@@ -1,0 +1,1 @@
+I prefer unordered array implementation. Because in that the insertions are done in constant time.
