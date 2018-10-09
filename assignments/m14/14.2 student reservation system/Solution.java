@@ -44,7 +44,7 @@ class Details {
      * @param      rc    The rectangle
      */
     Details(final String n, final String d, final int s1,
-     final int s2, final int s3, final int t, final String rc) {
+            final int s2, final int s3, final int t, final String rc) {
         this.name = n;
         this.dob = d;
         this.subject1 = s1;
@@ -185,51 +185,106 @@ class Details {
      */
     String print() {
         return this.getname() + "," + this.gettotal() + ","
-        + this.getcategory();
+               + this.getcategory();
     }
 }
+/**
+ * Class for heapsort.
+ */
 class Heapsort {
+    /**
+     * array.
+     */
     private Details[] array;
+    /**
+     * size.
+     */
     private int size;
-    Heapsort(Details[] a, int n){
+    /**
+     * Constructs the object.
+     *
+     * @param      a     { parameter_description }
+     * @param      n     { parameter_description }
+     */
+    Heapsort(final Details[] a, final int n) {
         array = a;
         size = n;
     }
-    Details[] sort(){
-        for(int i = (size/2)-1; i>=0; i--){
+    /**
+     * sorts.
+     * Best case: O(N)
+     *  worst case: O(N)
+     *  Average case: O(N)
+     * @return     { description_of_the_return_value }
+     */
+    Details[] sort() {
+        for (int i = (size / 2) - 1; i >= 0; i--) {
             heapify(size, i);
         }
-        for(int i = size-1; i>=0; i--){
+        for (int i = size - 1; i >= 0; i--) {
             swap(0, i);
             heapify(i, 0);
         }
         return array;
     }
-    void swap(int i, int j){
+    /**
+     * swaps.
+     *  Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     */
+    void swap(final int i, final int j) {
         Details temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-    void heapify(int n, int i){
+    /**
+     * heapifies.
+     *  Best case: O(logN)
+     *  worst case: O(logN)
+     *  Average case: O(logN)
+     * @param      n     { parameter_description }
+     * @param      i     { parameter_description }
+     */
+    void heapify(final int n, final int i) {
         int largest = i;
-        int l = 2*i + 1;
-        int r = 2*i + 2;
-        if(l<n && array[l].compareTo(array[largest]) < 0){
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+        if (l < n && array[l].compareTo(array[largest]) < 0) {
             largest = l;
         }
-        if (r < n && array[r].compareTo(array[largest]) < 0){
+        if (r < n && array[r].compareTo(array[largest]) < 0) {
             largest = r;
         }
-        if(largest != i){
+        if (largest != i) {
             swap(i, largest);
             heapify(n, largest);
         }
     }
-
-    Details getitem(int index){
+    /**
+     * gets item.
+     * 
+     * Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
+     */
+    Details getitem(final int index) {
         return array[index];
     }
-    int getsize(){
+    /**
+     * get size.
+     * 
+     * Best case: O(1)
+     *  worst case: O(1)
+     *  Average case: O(1)
+     * @return     { description_of_the_return_value }
+     */
+    int getsize() {
         return size;
     }
 }
@@ -261,7 +316,7 @@ final class Solution {
         }
         return false;
     }
-    
+
     /**
      * main.
      *
@@ -279,10 +334,10 @@ final class Solution {
         for (int i = 0; i < n; i++) {
             String[] input = scan.nextLine().split(",");
             students[i] = new Details(input[0], input[1],
-                 Integer.parseInt(input[2]),
-                Integer.parseInt(input[2 + 1]),
-                Integer.parseInt(input[2 + 2]),
-                Integer.parseInt(input[2 + 2 + 1]), input[2 + 2 + 2]);
+            Integer.parseInt(input[2]),
+                    Integer.parseInt(input[2 + 1]),
+                    Integer.parseInt(input[2 + 2]),
+                    Integer.parseInt(input[2 + 2 + 1]), input[2 + 2 + 2]);
         }
         Heapsort heap = new Heapsort(students, n);
         students = heap.sort();
@@ -300,18 +355,18 @@ final class Solution {
                 indices[i++] = k;
                 bc--;
             } else if (students[k].getcategory().
-                equals("SC") && sc > 0) {
+                       equals("SC") && sc > 0) {
                 indices[i++] = k;
                 sc--;
             } else if (students[k].getcategory().
-                equals("ST") && st > 0) {
+                       equals("ST") && st > 0) {
                 indices[i++] = k;
                 st--;
             }
         }
         if (bc > 0) {
             for (int k = open; k < n; k++) {
-            if (students[k].getcategory().equals("Open") && bc > 0) {
+                if (students[k].getcategory().equals("Open") && bc > 0) {
                     if (!contains(indices, k)) {
                         indices[i++] = k;
                         bc--;
@@ -321,7 +376,7 @@ final class Solution {
         }
         if (sc > 0) {
             for (int k = open; k < n; k++) {
-            if (students[k].getcategory().equals("Open") && sc > 0) {
+                if (students[k].getcategory().equals("Open") && sc > 0) {
                     if (!contains(indices, k)) {
                         indices[i++] = k;
                         sc--;
@@ -331,7 +386,7 @@ final class Solution {
         }
         if (st > 0) {
             for (int k = open; k < n; k++) {
-            if (students[k].getcategory().equals("Open") && st > 0) {
+                if (students[k].getcategory().equals("Open") && st > 0) {
                     if (!contains(indices, k)) {
                         indices[i++] = k;
                         st--;
