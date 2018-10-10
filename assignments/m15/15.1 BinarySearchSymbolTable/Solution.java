@@ -80,7 +80,7 @@ class SymbolTable {
 	 * @return     { description_of_the_return_value }
 	 */
 	int rank(String key) {
-		int low = 0, high = size -1;
+		int low = 0, high = size;
 		while(low <= high) {
 			int mid = low + (high - low) / 2;
 			int cmp = key.compareTo(keys[mid]);
