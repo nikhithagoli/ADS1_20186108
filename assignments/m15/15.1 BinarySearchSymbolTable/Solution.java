@@ -151,7 +151,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    String floor(String key) {
+    String floor(final String key) {
         int i = rank(key);
         if (i < size && key.compareTo(keys[i]) == 0) {
             return keys[i];
@@ -166,6 +166,12 @@ class SymbolTable {
  * class for Solution.
  */
 final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //unused constructor.
+    }
     /**
      * main.
      *

@@ -1,6 +1,4 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:154:18: Parameter key should be final. [FinalParameters]
-[ERROR] E:\basic\ADS1_20186108\assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:168:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 1 errors.
