@@ -32,6 +32,10 @@ class SymbolTable {
 	 * @param      value  The value
 	 */
 	void put(String key, Integer value){
+		if(value == null) {
+			delete(key);
+			return;
+		}
 		int i = rank(key);
 		if(i < size && keys[i].compareTo(key) == 0) {
 			values[i] = value;
@@ -101,6 +105,23 @@ class SymbolTable {
 	 */
 	String max() {
 		return keys[size - 1];
+	}
+	void delete(String key){
+		if (size == 0) {
+			return;
+		}
+		int i = rank(key);
+		if(i == size || keys[i].compareTo(key) != 0) {
+			return;
+		}
+		int j;
+		for(j = i; j < size-1; j++) {
+			keys[j] = keys[j + 1];
+			values[j] = values[j + 1];
+		}
+		size--;
+		keys[j] = null;
+		values[j] = null;
 	}
 	/**
 	 * deletes min value.
