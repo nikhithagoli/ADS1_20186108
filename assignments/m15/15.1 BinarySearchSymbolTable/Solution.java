@@ -1,6 +1,9 @@
 import java.util.Scanner;
 /**
  * Class for symbol table.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
  */
 class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
@@ -180,7 +183,8 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] input = sc.nextLine().split(" ");
-        SymbolTable<String, Integer> st = new SymbolTable<String, Integer>(input.length);
+        SymbolTable<String, Integer> st = new
+            SymbolTable<String, Integer>(input.length);
         for (int i = 0; i < input.length; i++) {
             st.put(input[i], i);
         }
