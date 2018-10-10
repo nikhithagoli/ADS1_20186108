@@ -30,7 +30,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * inserts a key-value pair.
-     *
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      * @param      key    The key
      * @param      value  The value
      */
@@ -54,7 +56,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * contains.
-     *
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
@@ -64,7 +68,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * gets function.
-     *
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
@@ -81,7 +87,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * rank.
-     *
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
@@ -103,7 +111,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * max.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      * @return     { description_of_the_return_value }
      */
     Key max() {
@@ -111,7 +121,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * deletes.
-     *
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      * @param      key   The key
      */
     void delete(final Key key) {
@@ -133,12 +145,18 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * deletes min value.
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      */
     void deleteMin() {
         delete(keys[0]);
     }
     /**
      * prints all values.
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      */
     void keys() {
         for (int i = 0; i < size; i++) {
@@ -149,7 +167,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * floor.
-     *
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
