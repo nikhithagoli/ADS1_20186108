@@ -1,72 +1,53 @@
 import java.util.Scanner;
-import java.util.Arrays;
-class Heapsort {
-	private int[] array;
-	private int size;
-	Heapsort(int n){
-		array = new int[n];
-		size = 0;
-	}
-	void sort(){
-		for(int i = (size/2)-1; i>=0; i--){
-			heapify(size, i);
-		}
-		for(int i = size-1; i>=0; i--){
-			swap(0, i);
-			heapify(i, 0);
-		}
-	}
-	void insert(int item){
-		array[size++] = item;
-		sort();
-		//System.out.println(Arrays.toString(array));
-	}
-	void swap(int i, int j){
-		int temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-	void heapify(int n, int i){
-		int largest = i;
-		int l = 2*i + 1;
-		int r = 2*i + 2;
-		if(l<n && array[l] > array[largest]){
-			largest = l;
-		}
-		if (r < n && array[r] > array[largest]){
-			largest = r;
-		}
-		if(largest != i){
-			swap(i, largest);
-			heapify(n, largest);
-		}
-	}
 
-	int getitem(int index){
-		return array[index];
-	}
-	int getsize(){
-		return size;
-	}
-}
-class Solution {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = Integer.parseInt(sc.nextLine());
-		Heapsort heap =  new Heapsort(n);
-		for(int i = 0; i < n; i++){
-			heap.insert(Integer.parseInt(sc.nextLine()));
-			int size = heap.getsize();
-			//System.out.println(size);
-			if((size) % 2 == 0){
-				// System.out.println(heap.getitem((size - 1)/2) + "			" + heap.getitem(size/2));
-				// System.out.println(((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2)));
-				float median = ((float)heap.getitem((size - 1)/2) + (float)heap.getitem(size/2))/2;
-				System.out.println(median);
-			} else {
-				float median = (float)heap.getitem((size-1)/2);
-				System.out.println(median);
-			}
-		}
-	}
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Unused Constructor.
+    }
+    /**
+     * {Main method}.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = Integer.parseInt(scan.nextLine());
+        MinPQ<Float> minpq = new MinPQ<Float>(n);
+        MaxPQ<Float> maxpq = new MaxPQ<Float>(n);
+        float median = 0.0f;
+        for (int i = 0; i < n; i++) {
+            float f = Float.parseFloat(scan.nextLine());
+            if (f > median) {
+                minpq.insert(f);
+            } else {
+                maxpq.insert(f);
+            }
+            if (maxpq.size() - minpq.size() > 1) {
+                float f1 = maxpq.delMax();
+                minpq.insert(f1);
+            }
+            if (minpq.size() - maxpq.size() > 1) {
+                float f2 = minpq.delMin();
+                maxpq.insert(f2);
+            }
+            if (minpq.size() == maxpq.size()) {
+                median = (minpq.min() + maxpq.max()) / 2;
+                System.out.println(median);
+            }
+            if (maxpq.size() > minpq.size()) {
+                median = maxpq.max();
+                System.out.println(median);
+            }
+            if (minpq.size() > maxpq.size()) {
+                median = minpq.min();
+                System.out.println(median);
+            }
+        }
+    }
 }
