@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  *
  * @param      <Key>  The key
  */
-class MaxPQ<Key> implements Iterable<Key> {
+public class MaxPQ<Key> implements Iterable<Key> {
     private Key[] pq;                    // store items at indices 1 to n
     private int n;                       // number of items on priority queue
     private Comparator<Key> comparator;  // optional comparator
