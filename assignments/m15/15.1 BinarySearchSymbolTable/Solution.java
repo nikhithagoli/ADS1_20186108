@@ -2,15 +2,15 @@ import java.util.Scanner;
 /**
  * Class for symbol table.
  */
-class SymbolTable {
+class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
      * keys array.
      */
-    private String[] keys;
+    private Key[] keys;
     /**
      * values array.
      */
-    private Integer[] values;
+    private Value[] values;
     /**
      * no of elemnts inserted till.
      */
@@ -21,8 +21,8 @@ class SymbolTable {
      * @param      n     { parameter_description }
      */
     SymbolTable(final int n) {
-        keys = new String[n];
-        values = new Integer[n];
+        keys = (Key[]) new Comparable[n];
+        values = (Value[]) new Object[n];
         size = 0;
     }
     /**
@@ -31,7 +31,7 @@ class SymbolTable {
      * @param      key    The key
      * @param      value  The value
      */
-    void put(final String key, final Integer value) {
+    void put(final Key key, final Value value) {
         if (value == null) {
             delete(key);
             return;
@@ -56,7 +56,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    boolean contains(final String key) {
+    boolean contains(final Key key) {
         return get(key) != null;
     }
     /**
@@ -66,7 +66,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    Integer get(final String key) {
+    Value get(final Key key) {
         if (size == 0) {
             return null;
         }
@@ -83,7 +83,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    int rank(final String key) {
+    int rank(final Key key) {
         int low = 0, high = size - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -103,7 +103,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    String max() {
+    Key max() {
         return keys[size - 1];
     }
     /**
@@ -111,7 +111,7 @@ class SymbolTable {
      *
      * @param      key   The key
      */
-    void delete(final String key) {
+    void delete(final Key key) {
         if (size == 0) {
             return;
         }
@@ -151,7 +151,7 @@ class SymbolTable {
      *
      * @return     { description_of_the_return_value }
      */
-    String floor(final String key) {
+    Key floor(final Key key) {
         int i = rank(key);
         if (i < size && key.compareTo(keys[i]) == 0) {
             return keys[i];
@@ -180,7 +180,7 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] input = sc.nextLine().split(" ");
-        SymbolTable st = new SymbolTable(input.length);
+        SymbolTable<String, Integer> st = new SymbolTable<String, Integer>(input.length);
         for (int i = 0; i < input.length; i++) {
             st.put(input[i], i);
         }
