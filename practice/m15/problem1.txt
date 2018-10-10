@@ -1,0 +1,1 @@
+I prefer ST with binary search because even it takes N time for insertation, it takes only logN time for searching unlike ST with sequential search which takes N time for both insertion and searching operations.
