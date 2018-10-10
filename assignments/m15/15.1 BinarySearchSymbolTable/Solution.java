@@ -127,7 +127,7 @@ class SymbolTable {
 	 * deletes min value.
 	 */
 	void deleteMin() {
-		values[0] = null;
+		delete(keys[0]);
 	}
 	/**
 	 * prints all values.
