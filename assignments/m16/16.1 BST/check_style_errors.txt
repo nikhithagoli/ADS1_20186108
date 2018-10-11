@@ -1,0 +1,9 @@
+Starting audit...
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:123:10: Variable 'root' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:180:38: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:196:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:209: Line is longer than 80 characters (found 124). [LineLength]
+[ERROR] E:\basic\ADS1_20186108\assignments\m16\16.1 BST\Solution.java:212: Line is longer than 80 characters (found 111). [LineLength]
+Audit done.
+Checkstyle ends with 6 errors.
