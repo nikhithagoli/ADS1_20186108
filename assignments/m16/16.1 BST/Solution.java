@@ -120,7 +120,7 @@ class BinarySearchTree {
     /**
      * root.
      */
-    Node root;
+    private Node root;
     /**
      * Constructs the object.
      */
@@ -177,7 +177,7 @@ class BinarySearchTree {
      *
      * @return     { description_of_the_return_value }
      */
-    private Integer get(final Node x,final Book key) {
+    private Integer get(final Node x, final Book key) {
         if (x == null) {
             return null;
         }
@@ -195,6 +195,12 @@ class BinarySearchTree {
  */
 final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //function.
+    }
+    /**
      * main.
      *
      * @param      args  The arguments
@@ -206,10 +212,13 @@ final class Solution {
             String[] tokens = sc.nextLine().split(",");
             switch (tokens[0]) {
             case "put":
-                bst.put(new Book(tokens[1], tokens[2], Double.parseDouble(tokens[2 + 1])), Integer.parseInt(tokens[2 + 2]));
+                bst.put(new Book(tokens[1], tokens[2],
+                 Double.parseDouble(tokens[2 + 1])),
+                  Integer.parseInt(tokens[2 + 2]));
                 break;
             case "get":
-                System.out.println(bst.get(new Book(tokens[1], tokens[2], Double.parseDouble(tokens[2 + 1]))));
+                System.out.println(bst.get(new Book(tokens[1],
+                 tokens[2], Double.parseDouble(tokens[2 + 1]))));
                 break;
             default:
                 break;
