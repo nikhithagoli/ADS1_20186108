@@ -2,15 +2,23 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashSet;
 import java.util.Scanner;
 /**
  * Class for cube sum.
  */
 class CubeSum implements Comparable<CubeSum> {
+    /**
+     * sum.
+     */
     private final int sum;
+    /**
+     * first number.
+     */
     private final int i;
+    /**
+     * second number.
+     */
     private final int j;
     /**
      * Constructs the object.
@@ -18,8 +26,8 @@ class CubeSum implements Comparable<CubeSum> {
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
-    public CubeSum(final int i, final int j) {
-        this.sum = i*i*i + j*j*j;
+    CubeSum(final int i, final int j) {
+        this.sum = i * i * i + j * j * j;
         this.i = i;
         this.j = j;
     }
@@ -31,8 +39,12 @@ class CubeSum implements Comparable<CubeSum> {
      * @return     { description_of_the_return_value }
      */
     public int compareTo(final CubeSum that) {
-        if (this.sum < that.sum) return -1;
-        if (this.sum > that.sum) return +1;
+        if (this.sum < that.sum) {
+            return -1;
+        }
+        if (this.sum > that.sum) {
+            return +1;
+        }
         return 0;
     }
     /**
@@ -74,8 +86,17 @@ class CubeSum implements Comparable<CubeSum> {
  * @param      <Key>  The key
  */
 class MinPQ<Key> implements Iterable<Key> {
+    /**
+     * keys array.
+     */
     private Key[] pq;                    // store items at indices 1 to n
+    /**
+     * n.
+     */
     private int n;                       // number of items on priority queue
+    /**
+     * compartor.
+     */
     private Comparator<Key> comparator;  // optional comparator
 
     /**
@@ -83,7 +104,7 @@ class MinPQ<Key> implements Iterable<Key> {
      *
      * @param  initCapacity the initial capacity of this priority queue
      */
-    public MinPQ(final int initCapacity) {
+    MinPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -91,7 +112,7 @@ class MinPQ<Key> implements Iterable<Key> {
     /**
      * Initializes an empty priority queue.
      */
-    public MinPQ() {
+    MinPQ() {
         this(1);
     }
 
@@ -102,8 +123,8 @@ class MinPQ<Key> implements Iterable<Key> {
      * @param  initCapacity the initial capacity of this priority queue
      * @param  comparator the order in which to compare the keys
      */
-    public MinPQ(final int initCapacity, final Comparator<Key> comparator) {
-        this.comparator = comparator;
+    MinPQ(final int initCapacity, final Comparator<Key> compa) {
+        this.comparator = compa;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -113,7 +134,7 @@ class MinPQ<Key> implements Iterable<Key> {
      *
      * @param  comparator the order in which to compare the keys
      */
-    public MinPQ(final Comparator<Key> comparator) {
+    MinPQ(final Comparator<Key> comparator) {
         this(1, comparator);
     }
 
@@ -124,12 +145,12 @@ class MinPQ<Key> implements Iterable<Key> {
      *
      * @param  keys the array of keys
      */
-    public MinPQ(final Key[] keys) {
+    MinPQ(final Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
         for (int i = 0; i < n; i++)
-            pq[i+1] = keys[i];
-        for (int k = n/2; k >= 1; k--)
+            pq[i + 1] = keys[i];
+        for (int k = n / 2; k >= 1; k--)
             sink(k);
         assert isMinHeap();
     }
@@ -204,25 +225,25 @@ class MinPQ<Key> implements Iterable<Key> {
         Key min = pq[1];
         exch(1, n--);
         sink(1);
-        pq[n+1] = null;     // to avoid loiterig and help with garbage collection
+        pq[n + 1] = null;   // to avoid loiterig and help with garbage collection
         if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
         assert isMinHeap();
         return min;
     }
 
 
-   /***************************************************************************
-    * Helper functions to restore the heap invariant.
-    ***************************************************************************/
+    /***************************************************************************
+     * Helper functions to restore the heap invariant.
+     ***************************************************************************/
     /**
      * swim.
      *
      * @param      k     { parameter_description }
      */
     private void swim(int k) {
-        while (k > 1 && greater(k/2, k)) {
-            exch(k, k/2);
-            k = k/2;
+        while (k > 1 && greater(k / 2, k)) {
+            exch(k, k / 2);
+            k = k / 2;
         }
     }
     /**
@@ -231,31 +252,30 @@ class MinPQ<Key> implements Iterable<Key> {
      * @param      k     { parameter_description }
      */
     private void sink(int k) {
-        while (2*k <= n) {
-            int j = 2*k;
-            if (j < n && greater(j, j+1)) j++;
+        while (2 * k <= n) {
+            int j = 2 * k;
+            if (j < n && greater(j, j + 1)) j++;
             if (!greater(k, j)) break;
             exch(k, j);
             k = j;
         }
     }
 
-   /***************************************************************************
-    * Helper functions for compares and swaps.
-    ***************************************************************************/
-   /**
-    * greater.
-    *
-    * @param      i     { parameter_description }
-    * @param      j     { parameter_description }
-    *
-    * @return     { description_of_the_return_value }
-    */
+    /***************************************************************************
+     * Helper functions for compares and swaps.
+     ***************************************************************************/
+    /**
+     * greater.
+     *
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private boolean greater(final int i, final int j) {
         if (comparator == null) {
             return ((Comparable<Key>) pq[i]).compareTo(pq[j]) > 0;
-        }
-        else {
+        } else {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
@@ -288,8 +308,8 @@ class MinPQ<Key> implements Iterable<Key> {
      */
     private boolean isMinHeap(final int k) {
         if (k > n) return true;
-        int left = 2*k;
-        int right = 2*k + 1;
+        int left = 2 * k;
+        int right = 2 * k + 1;
         if (left  <= n && greater(k, left))  return false;
         if (right <= n && greater(k, right)) return false;
         return isMinHeap(left) && isMinHeap(right);
@@ -363,16 +383,16 @@ final class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    static int taxinumber(final ArrayList<CubeSum> list, final int n, final int m){
+    static int taxinumber(final ArrayList<CubeSum> list, final int n, final int m) {
         int i = 0, k = n;
         int res = 0;
-        while(k > 0 && i < list.size()-m+1){
-            ArrayList<CubeSum> sublist = new ArrayList<CubeSum>(list.subList(i++, i+m-1));
+        while (k > 0 && i < list.size() - m + 1) {
+            ArrayList<CubeSum> sublist = new ArrayList<CubeSum>(list.subList(i++, i + m - 1));
             HashSet<Integer> set = new HashSet<Integer>();
-            for(CubeSum each: sublist) {
+            for (CubeSum each : sublist) {
                 set.add(each.getsum());
-            }    
-            if(set.size() == 1) {
+            }
+            if (set.size() == 1) {
                 res = sublist.get(0).getsum();
                 k--;
                 // System.out.println(set);
