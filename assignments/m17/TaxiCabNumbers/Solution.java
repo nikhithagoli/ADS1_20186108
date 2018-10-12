@@ -443,7 +443,7 @@ final class Solution {
      */
     public static void main(final String[] args) {
 
-        final int num = 524;
+        final int num = 523;
         Scanner sc = new Scanner(System.in);
         ArrayList<CubeSum> cubelist = new ArrayList<CubeSum>();
         // initialize priority queue
