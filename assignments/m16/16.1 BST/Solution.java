@@ -53,7 +53,9 @@ class Book {
     }
     /**
      * compare.
-     *
+     * best case: O(1)
+     * worst case: O(1)
+     * Average case: O(1)
      * @param      that  The that
      *
      * @return     { description_of_the_return_value }
@@ -138,7 +140,9 @@ class BinarySearchTree {
     }
     /**
      * put.
-     *
+     * best case: log(N)
+     * worst case: O(n)
+     * Average case: logN
      * @param      x      { parameter_description }
      * @param      key    The key
      * @param      value  The value
@@ -171,7 +175,9 @@ class BinarySearchTree {
     }
     /**
      * get.
-     *
+     * best case: log(N)
+     * worst case: O(n)
+     * Average case: logN
      * @param      x     { parameter_description }
      * @param      key   The key
      *
