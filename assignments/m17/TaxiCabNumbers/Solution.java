@@ -460,9 +460,6 @@ final class Solution {
                 pq.insert(new CubeSum(s.geti(), s.getj() + 1));
             }
         }
-        for(CubeSum each: cubelist) {
-            System.out.println(each.getsum());
-        }
         int n = sc.nextInt();
         int m = sc.nextInt();
         System.out.println(taxinumber(cubelist, n, m));
