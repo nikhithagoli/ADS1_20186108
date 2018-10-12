@@ -4,35 +4,60 @@ import java.util.NoSuchElementException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
+
 /**
  * Class for cube sum.
  */
 class CubeSum implements Comparable<CubeSum> {
     /**
-     * sum.
+     * sum variable.
      */
     private final int sum;
     /**
-     * first number.
+     * int i variable.
      */
-    private final int i;
+    private  final int i;
     /**
-     * second number.
+     * int j varibale.
      */
     private final int j;
     /**
      * Constructs the object.
      *
-     * @param      i     { parameter_description }
-     * @param      j     { parameter_description }
+     * @param      in     { parameter_description }
+     * @param      ja    { parameter_description }
      */
-    CubeSum(final int i, final int j) {
-        this.sum = i * i * i + j * j * j;
-        this.i = i;
-        this.j = j;
+    CubeSum(final int in, final int ja) {
+        this.sum = in * in * in + ja * ja * ja;
+        this.i = in;
+        this.j = ja;
     }
     /**
-     * compares.
+     * geti method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int geti() {
+        return this.i;
+    }
+    /**
+     * getj method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int getj() {
+        return this.j;
+    }
+    /**
+     * getsum method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int getsum() {
+        return this.sum;
+    }
+    /**
+     * compareTo method.
      *
      * @param      that  The that
      *
@@ -45,31 +70,8 @@ class CubeSum implements Comparable<CubeSum> {
         if (this.sum > that.sum) {
             return +1;
         }
+
         return 0;
-    }
-    /**
-     * get i.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int geti() {
-        return this.i;
-    }
-    /**
-     * get j.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int getj() {
-        return this.j;
-    }
-    /**
-     * get sum.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int getsum() {
-        return this.sum;
     }
     /**
      * Returns a string representation of the object.
@@ -87,17 +89,17 @@ class CubeSum implements Comparable<CubeSum> {
  */
 class MinPQ<Key> implements Iterable<Key> {
     /**
-     * keys array.
+     * key array to store elements.
      */
-    private Key[] pq;                    // store items at indices 1 to n
+    private Key[] pq;
     /**
-     * n.
+     * variable int .
      */
-    private int n;                       // number of items on priority queue
+    private int n;
     /**
-     * compartor.
+     * comparator.
      */
-    private Comparator<Key> comparator;  // optional comparator
+    private Comparator<Key> comparator;
 
     /**
      * Initializes an empty priority queue with the given initial capacity.
@@ -121,10 +123,10 @@ class MinPQ<Key> implements Iterable<Key> {
      * using the given comparator.
      *
      * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
+     * @param  comparators the order in which to compare the keys
      */
-    MinPQ(final int initCapacity, final Comparator<Key> compa) {
-        this.comparator = compa;
+    MinPQ(final int initCapacity, final Comparator<Key> comparators) {
+        this.comparator = comparators;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -132,26 +134,31 @@ class MinPQ<Key> implements Iterable<Key> {
     /**
      * Initializes an empty priority queue using the given comparator.
      *
-     * @param  comparator the order in which to compare the keys
+     * @param  comparators the order in which to compare the keys
      */
-    MinPQ(final Comparator<Key> comparator) {
-        this(1, comparator);
+    MinPQ(final Comparator<Key> comparators) {
+        this(1, comparators);
     }
 
     /**
      * Initializes a priority queue from the array of keys.
      * <p>
-     * Takes time proportional to the number of keys, using sink-based heap construction.
+     * Takes time proportional to the number of keys,
+     * using sink-based heap construction.
      *
      * @param  keys the array of keys
      */
     MinPQ(final Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             pq[i + 1] = keys[i];
-        for (int k = n / 2; k >= 1; k--)
+        }
+
+        for (int k = n / 2; k >= 1; k--) {
             sink(k);
+        }
+
         assert isMinHeap();
     }
 
@@ -181,12 +188,15 @@ class MinPQ<Key> implements Iterable<Key> {
      * @throws NoSuchElementException if this priority queue is empty
      */
     public Key min() {
-        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        if (isEmpty()) {
+            throw new NoSuchElementException(
+                "Priority queue underflow");
+        }
         return pq[1];
     }
 
     /**
-     * resizes.
+     * resize method.
      *
      * @param      capacity  The capacity
      */
@@ -205,10 +215,9 @@ class MinPQ<Key> implements Iterable<Key> {
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
-        // double size of array if necessary
-        if (n == pq.length - 1) resize(2 * pq.length);
-
-        // add x, and percolate it up to maintain heap invariant
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         pq[++n] = x;
         swim(n);
         assert isMinHeap();
@@ -221,51 +230,54 @@ class MinPQ<Key> implements Iterable<Key> {
      * @throws NoSuchElementException if this priority queue is empty
      */
     public Key delMin() {
-        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        if (isEmpty()) {
+            throw new NoSuchElementException(
+                "Priority queue underflow");
+        }
         Key min = pq[1];
         exch(1, n--);
         sink(1);
-        pq[n + 1] = null;   // to avoid loiterig and help with garbage collection
-        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        pq[n + 1] = null;   // to avoid loiterig and help with garbage collec
+        if ((n > 0) && (n == (pq.length - 1) / (2 + 2))) {
+            resize(pq.length / 2);
+        }
         assert isMinHeap();
         return min;
     }
-
-
-    /***************************************************************************
-     * Helper functions to restore the heap invariant.
-     ***************************************************************************/
     /**
-     * swim.
+     * Swim method.
      *
-     * @param      k     { parameter_description }
+     * @param      ka     { parameter_description }
      */
-    private void swim(int k) {
+    private void swim(final int ka) {
+        int k = ka;
         while (k > 1 && greater(k / 2, k)) {
             exch(k, k / 2);
             k = k / 2;
         }
     }
     /**
-     * sinks.
+     * sink method.
      *
-     * @param      k     { parameter_description }
+     * @param      ka     { parameter_description }
      */
-    private void sink(int k) {
+    private void sink(final int ka) {
+        int k = ka;
         while (2 * k <= n) {
             int j = 2 * k;
-            if (j < n && greater(j, j + 1)) j++;
-            if (!greater(k, j)) break;
+            if (j < n && greater(j, j + 1)) {
+                j++;
+            }
+            if (!greater(k, j)) {
+                break;
+            }
             exch(k, j);
             k = j;
         }
     }
 
-    /***************************************************************************
-     * Helper functions for compares and swaps.
-     ***************************************************************************/
     /**
-     * greater.
+     * greter method.
      *
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
@@ -280,7 +292,7 @@ class MinPQ<Key> implements Iterable<Key> {
         }
     }
     /**
-     * swaps.
+     * excahange method.
      *
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
@@ -290,6 +302,7 @@ class MinPQ<Key> implements Iterable<Key> {
         pq[i] = pq[j];
         pq[j] = swap;
     }
+
     /**
      * Determines if minimum heap.
      *
@@ -307,11 +320,17 @@ class MinPQ<Key> implements Iterable<Key> {
      * @return     True if minimum heap, False otherwise.
      */
     private boolean isMinHeap(final int k) {
-        if (k > n) return true;
+        if (k > n) {
+            return true;
+        }
         int left = 2 * k;
         int right = 2 * k + 1;
-        if (left  <= n && greater(k, left))  return false;
-        if (right <= n && greater(k, right)) return false;
+        if (left  <= n && greater(k, left)) {
+            return false;
+        }
+        if (right <= n && greater(k, right)) {
+            return false;
+        }
         return isMinHeap(left) && isMinHeap(right);
     }
 
@@ -332,21 +351,26 @@ class MinPQ<Key> implements Iterable<Key> {
      */
     private class HeapIterator implements Iterator<Key> {
         /**
-         * copy.
+         * copy variable.
          */
         private MinPQ<Key> copy;
 
         /**
          * Constructs the object.
          */
-        public HeapIterator() {
-            if (comparator == null) copy = new MinPQ<Key>(size());
-            else                    copy = new MinPQ<Key>(size(), comparator);
-            for (int i = 1; i <= n; i++)
+        HeapIterator() {
+            if (comparator == null) {
+                copy = new MinPQ<Key>(size());
+            } else {
+                copy = new MinPQ<Key>(size(), comparator);
+            }
+            for (int i = 1; i <= n; i++) {
+
                 copy.insert(pq[i]);
+            }
         }
         /**
-         * Determines if it has next.
+         * hasNext method.
          *
          * @return     True if has next, False otherwise.
          */
@@ -354,22 +378,25 @@ class MinPQ<Key> implements Iterable<Key> {
             return !copy.isEmpty();
         }
         /**
-         * removes.
+         * remove method.
          */
-        public void remove() {
+        public void remove()  {
             throw new UnsupportedOperationException();
         }
         /**
-         * next.
+         * next method.
          *
          * @return     { description_of_the_return_value }
          */
         public Key next() {
-            if (!hasNext()) throw new NoSuchElementException();
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
             return copy.delMin();
         }
     }
 }
+
 /**
  * Class for solution.
  */
