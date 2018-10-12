@@ -1,8 +1,5 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:403:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:413: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:417: Line is longer than 80 characters (found 94). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:450: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] E:\basic\ADS1_20186108\assignments\m17\TaxiCabNumbers\Solution.java:424: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 2 errors.

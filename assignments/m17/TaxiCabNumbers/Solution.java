@@ -402,6 +402,12 @@ class MinPQ<Key> implements Iterable<Key> {
  */
 final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //unused constructor.
+    }
+    /**
      * taxinumber.
      *
      * @param      list  The list
@@ -410,11 +416,13 @@ final class Solution {
      *
      * @return     { description_of_the_return_value }
      */
-    static int taxinumber(final ArrayList<CubeSum> list, final int n, final int m) {
+    static int taxinumber(final ArrayList<CubeSum> list,
+            final int n, final int m) {
         int i = 0, k = n;
         int res = 0;
         while (k > 0 && i < list.size() - m + 1) {
-            ArrayList<CubeSum> sublist = new ArrayList<CubeSum>(list.subList(i++, i + m - 1));
+            ArrayList<CubeSum> sublist = 
+                new ArrayList<CubeSum>(list.subList(i++, i + m - 1));
             HashSet<Integer> set = new HashSet<Integer>();
             for (CubeSum each : sublist) {
                 set.add(each.getsum());
@@ -447,8 +455,9 @@ final class Solution {
         while (!pq.isEmpty()) {
             CubeSum s = pq.delMin();
             cubelist.add(s);
-            if (s.getj() < num)
+            if (s.getj() < num) {
                 pq.insert(new CubeSum(s.geti(), s.getj() + 1));
+            }
         }
         int n = sc.nextInt();
         int m = sc.nextInt();
