@@ -58,7 +58,9 @@ class CubeSum implements Comparable<CubeSum> {
     }
     /**
      * compareTo method.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      * @param      that  The that
      *
      * @return     { description_of_the_return_value }
@@ -145,7 +147,9 @@ class MinPQ<Key> implements Iterable<Key> {
      * <p>
      * Takes time proportional to the number of keys,
      * using sink-based heap construction.
-     *
+     * Best case: O(NlogN)
+     * Worst case: O(NlogN)
+     * Average case: O(NlogN)
      * @param  keys the array of keys
      */
     MinPQ(final Key[] keys) {
@@ -183,7 +187,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Returns a smallest key on this priority queue.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      * @return a smallest key on this priority queue
      * @throws NoSuchElementException if this priority queue is empty
      */
@@ -197,7 +203,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * resize method.
-     *
+     * Best case: O(N)
+     * Worst case: O(N)
+     * Average case: O(N)
      * @param      capacity  The capacity
      */
     private void resize(final int capacity) {
@@ -211,7 +219,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Adds a new key to this priority queue.
-     *
+     * Best case: O(logN)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
@@ -225,7 +235,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Removes and returns a smallest key on this priority queue.
-     *
+     * Best case: O(logN)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @return a smallest key on this priority queue
      * @throws NoSuchElementException if this priority queue is empty
      */
@@ -246,7 +258,9 @@ class MinPQ<Key> implements Iterable<Key> {
     }
     /**
      * Swim method.
-     *
+     * Best case: O(logN)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      ka     { parameter_description }
      */
     private void swim(final int ka) {
@@ -258,7 +272,9 @@ class MinPQ<Key> implements Iterable<Key> {
     }
     /**
      * sink method.
-     *
+     * Best case: O(logN)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      ka     { parameter_description }
      */
     private void sink(final int ka) {
@@ -278,7 +294,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * greter method.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      *
@@ -293,7 +311,9 @@ class MinPQ<Key> implements Iterable<Key> {
     }
     /**
      * excahange method.
-     *
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
@@ -314,7 +334,9 @@ class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Determines if minimum heap.
-     *
+     * Best case: O(logN)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      * @param      k     { parameter_description }
      *
      * @return     True if minimum heap, False otherwise.
@@ -409,7 +431,9 @@ final class Solution {
     }
     /**
      * taxinumber.
-     *
+     * Best case: O(N)
+     * Worst case: O(N)
+     * Average case: O(N)
      * @param      list  The list
      * @param      n     { parameter_description }
      * @param      m     { parameter_description }
