@@ -443,7 +443,7 @@ final class Solution {
      */
     public static void main(final String[] args) {
 
-        final int num = 500;
+        final int num = 1000;
         Scanner sc = new Scanner(System.in);
         ArrayList<CubeSum> cubelist = new ArrayList<CubeSum>();
         // initialize priority queue
@@ -459,6 +459,9 @@ final class Solution {
             if (s.getj() < num) {
                 pq.insert(new CubeSum(s.geti(), s.getj() + 1));
             }
+        }
+        for(CubeSum each: cubelist) {
+            System.out.println(each.getsum());
         }
         int n = sc.nextInt();
         int m = sc.nextInt();
