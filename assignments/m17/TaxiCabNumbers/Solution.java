@@ -421,7 +421,7 @@ final class Solution {
         int i = 0, k = n;
         int res = 0;
         while (k > 0 && i < list.size() - m + 1) {
-            ArrayList<CubeSum> sublist = 
+            ArrayList<CubeSum> sublist =
                 new ArrayList<CubeSum>(list.subList(i++, i + m - 1));
             HashSet<Integer> set = new HashSet<Integer>();
             for (CubeSum each : sublist) {
