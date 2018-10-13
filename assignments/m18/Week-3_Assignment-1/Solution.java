@@ -87,6 +87,9 @@ final class Solution {
                 maxpq.insert(new Stock(input[0], Double.parseDouble(input[1])));
                 minpq.insert(new Stock(input[0], Double.parseDouble(input[1])));
             }
+            /**
+             * to delete max it takes logN and to delete five maxs its takes NlogN.
+             */
             int top = 5;
             while (top > 0) {
                 Stock res = maxpq.delMax();
@@ -100,6 +103,9 @@ final class Solution {
                 top--;
             }
             System.out.println();
+            /**
+             * to delete mix it takes logN and to delete five mins its takes NlogN.
+             */
             top = 5;
             while (top > 0) {
                 Stock res = minpq.delMin();
@@ -117,6 +123,9 @@ final class Solution {
         int m = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < m; i++) {
             String tokens[] = sc.nextLine().split(",");
+            /**
+             * to get the value of key from symbol table it takes logN.
+             */
             if (tokens[0].equals("get")) {
                 if (tokens[1].equals("maxST")) {
                     Integer res = best.get(tokens[2]);
@@ -134,6 +143,10 @@ final class Solution {
                     }
                 }
             } else {
+                /**
+                 * to get all the keys in symbol table it takes O(N)
+                 * to print common elements it takes O(N)
+                 */
                 String[] keys = best.keys();
                 for (String each : keys) {
                     if (worst.contains(each)) {
