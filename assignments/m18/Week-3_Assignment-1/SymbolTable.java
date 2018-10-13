@@ -1,7 +1,7 @@
 /**
  * Class for symbol table.
  */
-public class SymbolTable {
+class SymbolTable {
     /**
      * keys array.
      */
