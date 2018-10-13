@@ -79,6 +79,9 @@ final class Solution {
         int n = Integer.parseInt(sc.nextLine());
         SymbolTable best = new SymbolTable(n);
         SymbolTable worst = new SymbolTable(n);
+        /**
+         * to exit this loop it takes O(n^2) time.
+         */
         for (int i = 0; i < 6; i++) {
             MaxPQ<Stock> maxpq = new MaxPQ<Stock>();
             MinPQ<Stock> minpq = new MinPQ<Stock>();
@@ -110,6 +113,9 @@ final class Solution {
             while (top > 0) {
                 Stock res = minpq.delMin();
                 System.out.println(res.print());
+                /**
+                 * to get the value from symbol table it takes logN.
+                 */
                 Integer val = worst.get(res.getname());
                 if (val == null) {
                     worst.put(res.getname(), 1);
