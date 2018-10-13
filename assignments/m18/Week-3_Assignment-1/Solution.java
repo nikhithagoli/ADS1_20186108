@@ -30,8 +30,8 @@ class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
-		SymbolTable<String, Integer> best = new SymbolTable<String, Integer>(n);
-		SymbolTable<String, Integer> worst = new SymbolTable<String, Integer>(n);
+		SymbolTable best = new SymbolTable(n);
+		SymbolTable worst = new SymbolTable(n);
 		for(int i = 0; i < 6; i++) {
 			MaxPQ<Stock> maxpq = new MaxPQ<Stock>();
         	MinPQ<Stock> minpq = new MinPQ<Stock>();

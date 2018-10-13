@@ -602,7 +602,7 @@ Chola Inv Fin 1.47
 4
 0
 ----------------------------------------
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 Merck Ltd 4.83
 Schaeffler India 2.57
@@ -776,7 +776,15 @@ WABCO India 0.33
 2
 1
 1
-Exception in thread "main" java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Comparable;
-	at SymbolTable.keys(SymbolTable.java:155)
-	at Solution.main(Solution.java:91)
+Abbott India
+Bajaj Finserv
+Bharat Rasayan
+Bosch
+ICRA
+MRF
+Merck Ltd
+Sanofi India
+Schaeffler India
+TTK Prestige
+Tasty Bite Eat
 ----------------------------------------

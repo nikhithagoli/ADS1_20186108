@@ -1,12 +1,12 @@
-class SymbolTable<Key extends Comparable<Key>, Value> {
+class SymbolTable {
     /**
      * keys array.
      */
-    private Key[] keys;
+    private String[] keys;
     /**
      * values array.
      */
-    private Value[] values;
+    private Integer[] values;
     /**
      * no of elemnts inserted till.
      */
@@ -17,8 +17,8 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * @param      n     { parameter_description }
      */
     SymbolTable(final int n) {
-        keys = (Key[]) new Comparable[n];
-        values = (Value[]) new Object[n];
+        keys = new String[n];
+        values = new Integer[n];
         size = 0;
     }
     /**
@@ -29,7 +29,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * @param      key    The key
      * @param      value  The value
      */
-    void put(final Key key, final Value value) {
+    void put(final String key, final Integer value) {
         if (value == null) {
             delete(key);
             return;
@@ -56,7 +56,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-    boolean contains(final Key key) {
+    boolean contains(final String key) {
         return get(key) != null;
     }
     /**
@@ -68,7 +68,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-    Value get(final Key key) {
+    Integer get(final String key) {
         if (size == 0) {
             return null;
         }
@@ -87,7 +87,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-    int rank(final Key key) {
+    int rank(final String key) {
         int low = 0, high = size - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -109,7 +109,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * Average case: O(1)
      * @return     { description_of_the_return_value }
      */
-    Key max() {
+    String max() {
         return keys[size - 1];
     }
     /**
@@ -119,7 +119,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * Average case: O(N)
      * @param      key   The key
      */
-    void delete(final Key key) {
+    void delete(final String key) {
         if (size == 0) {
             return;
         }
@@ -151,8 +151,8 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * Worst case: O(N)
      * Average case: O(N)
      */
-    Key[] keys() {
-        Key[] res = (Key[]) new Object[size];
+    String[] keys() {
+        String[] res = new String[size];
         int k = 0;
         for (int i = 0; i < size; i++) {
             if (values[i] != null) {
@@ -170,7 +170,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-    Key floor(final Key key) {
+    String floor(final String key) {
         int i = rank(key);
         if (i < size && key.compareTo(keys[i]) == 0) {
             return keys[i];
