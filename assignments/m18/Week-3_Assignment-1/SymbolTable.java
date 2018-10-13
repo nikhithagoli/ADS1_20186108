@@ -1,3 +1,6 @@
+/**
+ * Class for symbol table.
+ */
 class SymbolTable {
     /**
      * keys array.
@@ -150,6 +153,8 @@ class SymbolTable {
      * Best case: O(1)
      * Worst case: O(N)
      * Average case: O(N)
+     *
+     * @return     { description_of_the_return_value }
      */
     String[] keys() {
         String[] res = new String[size];
@@ -180,9 +185,12 @@ class SymbolTable {
         }
         return keys[i - 1];
     }
+    /**
+     * prints.
+     */
     void print() {
-        for(int i = 0; i < size; i++) {
-            System.out.println(keys[i] + "         " +values[i]);
+        for (int i = 0; i < size; i++) {
+            System.out.println(keys[i] + "         " + values[i]);
         }
     }
 }
