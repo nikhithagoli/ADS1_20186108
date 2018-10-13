@@ -3,7 +3,7 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:1: Missing a Javadoc comment. [JavadocType]
 [ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:154: Expected @return tag. [JavadocMethod]
 [ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:183:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:184:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:184:12: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] E:\basic\ADS1_20186108\assignments\m18\Week-3_Assignment-1\SymbolTable.java:185:55: '+' is not followed by whitespace. [WhitespaceAround]
 Audit done.
 Checkstyle ends with 6 errors.

@@ -1,21 +1,58 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+/**
+ * Class for stock.
+ */
 class Stock implements Comparable<Stock> {
+    /**
+     * stock name.
+     */
     private String name;
+    /**
+     * %change
+     */
     private Double change;
-    Stock(String n, Double c) {
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     * @param      c     { parameter_description }
+     */
+    Stock(final String n, final Double c) {
         this.name = n;
         this.change = c;
     }
+    /**
+     * gets name.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String getname() {
         return this.name;
     }
+    /**
+     * returns change.
+     *
+     * @return     { description_of_the_return_value }
+     */
     Double getchange() {
         return this.change;
     }
+    /**
+     * prints stock.
+     *
+     * @return     { description_of_the_return_value }
+     */
     String print() {
         return this.name + " " + this.change;
     }
+    /**
+     * compares.
+     *
+     * @param      that  The that
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int compareTo(final Stock that) {
         if (this.change > that.change) {
             return 1;
@@ -26,8 +63,16 @@ class Stock implements Comparable<Stock> {
         }
     }
 }
-class Solution {
-    public static void main(String[] args) {
+/**
+ * Class for solution.
+ */
+final class Solution {
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
         SymbolTable best = new SymbolTable(n);
