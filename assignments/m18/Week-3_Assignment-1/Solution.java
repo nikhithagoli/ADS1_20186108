@@ -48,7 +48,7 @@ class Solution {
         			if(val == null){
         				best.put(res.getname(), 1);
         			} else {
-        				best.put(res.getname(), val++);
+        				best.put(res.getname(), val+1);
         			}
         			top--;
         		}
@@ -61,7 +61,7 @@ class Solution {
         			if(val == null){
         				worst.put(res.getname(), 1);
         			} else {
-        				worst.put(res.getname(), val++);
+        				worst.put(res.getname(), val+1);
         			}
         			top--;
         		}
