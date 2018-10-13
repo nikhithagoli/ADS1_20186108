@@ -48,7 +48,9 @@ class Stock implements Comparable<Stock> {
     }
     /**
      * compares.
-     *
+     * best case: O(1)
+     * worst case: O(1)
+     * Average case : O(1)
      * @param      that  The that
      *
      * @return     { description_of_the_return_value }

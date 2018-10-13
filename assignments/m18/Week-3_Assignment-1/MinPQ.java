@@ -46,7 +46,9 @@ public class MinPQ<Key> implements Iterable<Key> {
      * Initializes a priority queue from the array of keys.
      * <p>
      * Takes time proportional to the number of keys, using sink-based heap construction.
-     *
+     * best case: O(NlogN)
+     * worst case: O(NlogN)
+     * Average case : O(NlogN)
      * @param  keys the array of keys
      */
     public MinPQ(Key[] keys) {
@@ -98,7 +100,9 @@ public class MinPQ<Key> implements Iterable<Key> {
 
     /**
      * Adds a new key to this priority queue.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @param  x the key to add to this priority queue
      */
     public void insert(Key x) {
@@ -112,7 +116,9 @@ public class MinPQ<Key> implements Iterable<Key> {
     }
     /**
      * Removes and returns a smallest key on this priority queue.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @return a smallest key on this priority queue
      * @throws NoSuchElementException if this priority queue is empty
      */
@@ -126,13 +132,26 @@ public class MinPQ<Key> implements Iterable<Key> {
         assert isMinHeap();
         return min;
     }
+    /**
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
+     *
+     * @param      k     { parameter_description }
+     */
     private void swim(int k) {
         while (k > 1 && greater(k / 2, k)) {
             exch(k, k / 2);
             k = k / 2;
         }
     }
-
+    /**
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
+     *
+     * @param      k     { parameter_description }
+     */
     private void sink(int k) {
         while (2 * k <= n) {
             int j = 2 * k;

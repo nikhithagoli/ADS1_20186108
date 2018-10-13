@@ -49,7 +49,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     /**
      * Initializes a priority queue from the array of keys.
      * Takes time proportional to the number of keys, using sink-based heap construction.
-     *
+     * best case: O(nlogN)
+     * worst case: O(nlogN)
+     * Average case : O(nlogN)
      * @param  keys the array of keys
      */
     public MaxPQ(Key[] keys) {
@@ -99,7 +101,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * Adds a new key to this priority queue.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @param  x the new key to add to this priority queue
      */
     public void insert(Key x) {
@@ -114,7 +118,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * Removes and returns a largest key on this priority queue.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @return a largest key on this priority queue
      * @throws NoSuchElementException if this priority queue is empty
      */
@@ -130,7 +136,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * swims.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @param      k     { parameter_description }
      */
     private void swim(int k) {
@@ -141,7 +149,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * sinks.
-     *
+     * best case: O(logN)
+     * worst case: O(logN)
+     * Average case : O(logN)
      * @param      k     { parameter_description }
      */
     private void sink(int k) {
@@ -155,7 +165,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * less.
-     *
+     * best case: O(1)
+     * worst case: O(1)
+     * Average case : O(1)
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      *
@@ -170,7 +182,9 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
     /**
      * swaps.
-     *
+     * best case: O(1)
+     * worst case: O(1)
+     * Average case : O(1)
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
