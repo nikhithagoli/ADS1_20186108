@@ -1,4 +1,4 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 Merck Ltd 4.83
 ICRA 2.84
@@ -143,12 +143,8 @@ Honeywell Auto -1.08
 Sanofi India 0.21
 Tasty Bite Eat 0.23
 WABCO India 0.33
-
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:72)
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 Larsen & Toubro 4.11
 Vinati Organics 4.03
@@ -293,10 +289,6 @@ NIIT Tech 0.21
 Fine Organic Industries Ltd. 0.29
 Vinati Organics 1.03
 Chola Inv Fin 1.47
-
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:72)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -786,5 +778,5 @@ WABCO India 0.33
 1
 Exception in thread "main" java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Comparable;
 	at SymbolTable.keys(SymbolTable.java:155)
-	at Solution.main(Solution.java:93)
+	at Solution.main(Solution.java:91)
 ----------------------------------------

@@ -29,8 +29,7 @@ class Stock implements Comparable<Stock> {
 class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		sc.nextLine();
+		int n = Integer.parseInt(sc.nextLine());
 		SymbolTable<String, Integer> best = new SymbolTable<String, Integer>(n);
 		SymbolTable<String, Integer> worst = new SymbolTable<String, Integer>(n);
 		for(int i = 0; i < 6; i++) {
@@ -68,8 +67,7 @@ class Solution {
         		}
         		System.out.println();
 		}
-		int m = sc.nextInt();
-		sc.nextLine();
+		int m = Integer.parseInt(sc.nextLine());
 		for(int i = 0; i < m; i++) {
 			String tokens[] = sc.nextLine().split(",");
 			if(tokens[0].equals("get")) {
