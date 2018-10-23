@@ -485,7 +485,7 @@ class Bst {
     }
 
     /**
-     * Removes the specified key
+     * Removes the specified key.
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -598,5 +598,4 @@ public final class Solution {
 
 
     }
-
 }
