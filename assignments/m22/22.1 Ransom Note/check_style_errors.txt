@@ -1,24 +1,6 @@
 Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:57:37: ';' is preceded with whitespace. [NoWhitespaceBefore]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:58: Line has trailing spaces. [RegexpSingleline]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:67:25: '97' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:82:40: '0x7fffffff' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:98:20: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:98:29: '=' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:98:37: '!=' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:99:27: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:104:19: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:118:20: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:118:29: '=' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:118:37: '!=' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:119:27: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:124: Line has trailing spaces. [RegexpSingleline]
+[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:82:32: '0x7fffffff' is a magic number. [MagicNumber]
 [ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:133:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:147:20: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:151:20: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:152:27: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:158:19: 'if' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 21 errors.
+Checkstyle ends with 3 errors.
