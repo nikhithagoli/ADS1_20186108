@@ -1,0 +1,11 @@
+index			values
+
+0				A,U
+
+1				Q
+	
+2				
+
+3				S,I,N
+
+4				E,Y,T,O
