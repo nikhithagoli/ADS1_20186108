@@ -132,6 +132,12 @@ class HashTable {
  */
 final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //unused.
+    }
+    /**
      * main.
      *
      * @param      args  The arguments

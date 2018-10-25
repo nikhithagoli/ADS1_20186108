@@ -1,6 +1,4 @@
 Starting audit...
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:82:32: '0x7fffffff' is a magic number. [MagicNumber]
-[ERROR] E:\basic\ADS1_20186108\assignments\m22\22.1 Ransom Note\Solution.java:133:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 1 errors.
