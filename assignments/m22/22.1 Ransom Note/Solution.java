@@ -90,7 +90,9 @@ class HashTable {
     }
     /**
      * put.
-     *
+     * Best case: O(k)
+     * Average case: O(K)
+     * Worst case: O(logN)
      * @param      k     { parameter_description }
      * @param      v     { parameter_description }
      */
@@ -109,7 +111,9 @@ class HashTable {
     }
     /**
      * get.
-     *
+     * Best case: O(k)
+     * Average case: O(K)
+     * Worst case: O(logN)
      * @param      k     { parameter_description }
      *
      * @return     { description_of_the_return_value }
