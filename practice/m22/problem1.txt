@@ -1,0 +1,3 @@
+Yes it is legal.
+when a hashcode method returns a constant value, it works as a noraml hash map but all the elemnets are stored at the same index.
+So the search would be sequential which is obviously slow.
