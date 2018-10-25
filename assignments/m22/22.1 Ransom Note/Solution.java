@@ -79,7 +79,8 @@ class HashTable {
      * @return     { description_of_the_return_value }
      */
     int hash(final String k) {
-        return (k.hashCode() & 0x7fffffff) % s;
+        final Integer num = 0x7fffffff;
+        return (k.hashCode() & num) % s;
     }
     /**
      * resizes.
