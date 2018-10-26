@@ -4,7 +4,7 @@
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
-class LinearProbingHashST<Key, Value> {
+public class LinearProbingHashST<Key, Value> {
 	/**
 	 * capacity.
 	 */
