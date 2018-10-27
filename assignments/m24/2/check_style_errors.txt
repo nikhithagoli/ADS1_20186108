@@ -67,12 +67,12 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:207: Line has trailing spaces. [RegexpSingleline]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:208: Line has trailing spaces. [RegexpSingleline]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:209: Line has trailing spaces. [RegexpSingleline]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:232:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:232:20: 'for' is not followed by whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:234: Line is longer than 80 characters (found 123). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:237:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:239:27: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:237:20: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:239:27: 'if' is not followed by whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:240: Line is longer than 80 characters (found 102). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:241:34: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:241:34: 'if' is not followed by whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:246: Line has trailing spaces. [RegexpSingleline]
 Audit done.
 Checkstyle ends with 75 errors.

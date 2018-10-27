@@ -10,7 +10,7 @@ Rivest
 Dan
 Abegg
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 Clark
 Rhian Cahill
@@ -60,8 +60,8 @@ Brian Caffrey
 Your Output: 
 Clark
 Rhian Cahill
-Sasha Cagen
 Cozbi A. Cabrera
+Sasha Cagen
 Rivest
 Access
 Rachel Caine
@@ -97,14 +97,14 @@ Douglas
 Fred
 Sally Cabot
 Rovina Cai
-Tim Cain
 James Caffin
+Tim Cain
 John
 Tim Cahill
 Abegg
 Brian Caffrey
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 Steve Cafferty
 Hank
@@ -188,8 +188,8 @@ Douglas
 Fred
 Sally Cabot
 Rovina Cai
-Tim Cain
 James Caffin
+Tim Cain
 John
 Tim Cahill
 Abegg
@@ -213,16 +213,16 @@ Douglas
 Fred
 Sally Cabot
 Rovina Cai
-Tim Cain
 James Caffin
+Tim Cain
 John
 Tim Cahill
 Abegg
 Brian Caffrey
 Clark
 Rhian Cahill
-Sasha Cagen
 Cozbi A. Cabrera
+Sasha Cagen
 Rivest
 Steve Cafferty
 Hank
@@ -962,9 +962,9 @@ Keith Habersberger
 Yamile Saied Méndez
 Namita Jain
 Ed J. Paine
-Macky Pamintuan
-Monica Palms
 Jimmy Palmiotti
+Monica Palms
+Macky Pamintuan
 Laurence Packer
 John W. Jacobs M.D.
 Michael Panckridge
@@ -995,9 +995,9 @@ Joseph A. Maciariello
 David Packard
 Meredith Jaeger
 Rebecca Pacheco
-Scott Palmer
-Parker J. Palmer
 Pamela Palmer
+Parker J. Palmer
+Scott Palmer
 Nathan Hale
 Pamela Haag
 Bernie Mac
@@ -1028,8 +1028,8 @@ Richard Jackson
 Carrington MacDuffie
 Katherine Hall Page
 Chuck Hagel
-T. T. Macan
 Brad Haddin
+T. T. Macan
 Catherine Macaulay
 Frank Pacetta
 Iva-Marie Palmer
@@ -1057,8 +1057,8 @@ Marylin Hafner
 Charlie Haas
 Mick Jackson
 Bethany Palmer
-Melanie MacHugh
 Mark Macdonald
+Melanie MacHugh
 Bethany Hagen
 Tiffany D. Jackson
 Mark Palmer
@@ -1069,8 +1069,8 @@ Nafisa Haji
 Rebecca Paley
 Marilyn Hagerty
 Shaili Jain M.D.
-Al Jaffee
 John Jacobs
+Al Jaffee
 Nasim Marie Jafry
 Laura Holmes Haddad
 David H. Hackworth
@@ -1178,14 +1178,14 @@ Alex Palmer
 David Hagedorn
 M MacCallum
 James B. Maas
-Manoj Pandey
 Aparna Pande
+Manoj Pandey
 John W. Jacobs
 Thomas Paine
 Richard Mabey
 Jo Jackson King
-Nick Page
 Baby Halder
+Nick Page
 Kinley MacGregor
 Liza Palmer
 Libby Jackson
@@ -1225,8 +1225,8 @@ Sari Padorr
 Mary MacCracken
 Michael Haag
 Maxwell Mackenzie
-Kevin MacAllister
 Todd Haberkorn
+Kevin MacAllister
 Michael Jaime-Becerra
 David Macfarlane
 Jake Page
@@ -1240,8 +1240,8 @@ Thomas Pakenham
 Terrence J
 Shane Jacobson
 Hannah Paasch
-Svetlana Palmer
 Kieran Palmer
+Svetlana Palmer
 Helen Palmer
 Stuart B. MacBride
 Wayne Pacelle
@@ -1256,9 +1256,9 @@ Keith Habersberger
 Yamile Saied Méndez
 Namita Jain
 Ed J. Paine
-Macky Pamintuan
-Monica Palms
 Jimmy Palmiotti
+Monica Palms
+Macky Pamintuan
 Laurence Packer
 John W. Jacobs M.D.
 Michael Panckridge
@@ -1289,8 +1289,6 @@ Joseph A. Maciariello
 David Packard
 Meredith Jaeger
 Rebecca Pacheco
-Scott Palmer
-Parker J. Palmer
 Pamela Palmer
 Christopher N. Page
 Ellie Macdonald
@@ -1367,14 +1365,14 @@ Alex Palmer
 David Hagedorn
 M MacCallum
 James B. Maas
-Manoj Pandey
 Aparna Pande
+Manoj Pandey
 John W. Jacobs
 Thomas Paine
 Richard Mabey
 Jo Jackson King
-Nick Page
 Baby Halder
+Nick Page
 Kinley MacGregor
 Liza Palmer
 Libby Jackson
@@ -1414,8 +1412,8 @@ Sari Padorr
 Mary MacCracken
 Michael Haag
 Maxwell Mackenzie
-Kevin MacAllister
 Todd Haberkorn
+Kevin MacAllister
 Michael Jaime-Becerra
 David Macfarlane
 Jake Page
@@ -1429,8 +1427,8 @@ Thomas Pakenham
 Terrence J
 Shane Jacobson
 Hannah Paasch
-Svetlana Palmer
 Kieran Palmer
+Svetlana Palmer
 Helen Palmer
 Stuart B. MacBride
 Wayne Pacelle
@@ -1455,9 +1453,9 @@ Jeannette Haien
 Daniel Hahn
 Sara Palacios
 Ed J. Paine
-Macky Pamintuan
-Monica Palms
 Jimmy Palmiotti
+Monica Palms
+Macky Pamintuan
 Laurence Packer
 John W. Jacobs M.D.
 Michael Panckridge
@@ -1488,9 +1486,9 @@ Joseph A. Maciariello
 David Packard
 Meredith Jaeger
 Rebecca Pacheco
-Scott Palmer
-Parker J. Palmer
 Pamela Palmer
+Parker J. Palmer
+Scott Palmer
 Nathan Hale
 Pamela Haag
 Bernie Mac
@@ -1521,8 +1519,8 @@ Richard Jackson
 Carrington MacDuffie
 Katherine Hall Page
 Chuck Hagel
-T. T. Macan
 Brad Haddin
+T. T. Macan
 Catherine Macaulay
 Frank Pacetta
 Iva-Marie Palmer
@@ -1568,22 +1566,22 @@ Alex Palmer
 David Hagedorn
 M MacCallum
 James B. Maas
-Manoj Pandey
 Aparna Pande
+Manoj Pandey
 John W. Jacobs
 Thomas Paine
 Richard Mabey
 Jo Jackson King
-Nick Page
 Baby Halder
+Nick Page
 Kinley MacGregor
 Liza Palmer
 Libby Jackson
 Kristin Halbrook
 Ed J. Paine
-Macky Pamintuan
-Monica Palms
 Jimmy Palmiotti
+Monica Palms
+Macky Pamintuan
 Laurence Packer
 John W. Jacobs M.D.
 Michael Panckridge
@@ -1614,9 +1612,9 @@ Joseph A. Maciariello
 David Packard
 Meredith Jaeger
 Rebecca Pacheco
-Scott Palmer
-Parker J. Palmer
 Pamela Palmer
+Parker J. Palmer
+Scott Palmer
 Nathan Hale
 Pamela Haag
 Bernie Mac
@@ -1653,8 +1651,8 @@ Nafisa Haji
 Rebecca Paley
 Marilyn Hagerty
 Shaili Jain M.D.
-Al Jaffee
 John Jacobs
+Al Jaffee
 Nasim Marie Jafry
 Laura Holmes Haddad
 David H. Hackworth

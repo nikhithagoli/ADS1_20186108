@@ -62,7 +62,7 @@ class Student {
      * @return     { description_of_the_return_value }
      */
     int compareTo(final Student that) {
-        if (this.total.compareTo(that.total) > 0) {
+        if (this.total.compareTo(that.total) >= 0) {
             return 1;
         } else {
             return -1;
@@ -141,7 +141,7 @@ class BinarySearchTree {
             return new Node(key, value);
         }
         int cmp = key.compareTo(x.key);
-        if (cmp <= 0) {
+        if (cmp < 0) {
             x.left = put(x.left, key, value);
         } else {
             x.right = put(x.right, key, value);
