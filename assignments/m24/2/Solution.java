@@ -22,7 +22,7 @@ final class Solution {
         for (int i = 0; i < n; i++) {
             String[] input = sc.nextLine().split(",");
             bst.put(new Student(Integer.parseInt(input[0]),
-             input[1],Double.parseDouble(input[2])), input[1]);
+             input[1], Double.parseDouble(input[2])), input[1]);
         }
         int m = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < m; i++) {
