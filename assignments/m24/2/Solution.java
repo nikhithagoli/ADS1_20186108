@@ -148,41 +148,27 @@ class BinarySearchTree {
         }
         return x;
     }
-    void get(Node x, Double k1, Double k2) { 
+    void get(final Node x, final Double k1, final Double k2) { 
         if (x == null) { 
             return; 
         } 
         if (k1 < x.key.gettotal()) { 
             get(x.left, k1, k2); 
         } 
-  
-        /* if root's data lies in range, then prints root's data */
         if (k1 <= x.key.gettotal() && k2 >= x.key.gettotal()) { 
             System.out.println(x.value); 
         } 
-  
-        /* If root->data is smaller than k2, then only we can get o/p keys 
-         in right subtree */
         if (k2 > x.key.gettotal()) { 
             get(x.right, k1, k2); 
         } 
     }
-    void getbe(Double k1, Double k2) {
+    void getbe(final Double k1, final Double k2) {
     	get(root, k1, k2);
     }
-    void getle(Double k) {
+    void getle(final Double k) {
     	get(root, 0.0, k);
     }
-    /*void getle(Node x, Double k) { 
-        if (x == null) { 
-            return; 
-        } 
-        if (k < x.key.gettotal()) { 
-            getle(x.left, k); 
-        } 
-  		System.out.println(x.value);
-    }*/
-    Double findMax(Node node) 
+    Double findMax(final Node node) 
     { 
         if (node == null) 
             return 0.0; 
@@ -197,18 +183,9 @@ class BinarySearchTree {
             res = rres; 
         return res; 
     }
-    void getge(Double k) {
+    void getge(final Double k) {
     	get(root, k, findMax(root));
     }
-    /* getge(Node x, Double k) { 
-        if (x == null) { 
-            return; 
-        } 
-        if (k > x.key.gettotal()) { 
-            getge(x.right, k); 
-        } 
-  		System.out.println(x.value);
-    }*/
 }
 /**
  * Class for solution.
@@ -231,13 +208,15 @@ final class Solution {
 		BinarySearchTree bst = new BinarySearchTree();
 		for(int i = 0; i < n; i++) {
 			String[] input = sc.nextLine().split(",");
-			bst.put(new Student(Integer.parseInt(input[0]), input[1], Double.parseDouble(input[2])), input[1]);
+			bst.put(new Student(Integer.parseInt(input[0]), input[1],
+			 Double.parseDouble(input[2])), input[1]);
 		}
 		int m = Integer.parseInt(sc.nextLine());
 		for(int i = 0; i < m; i++) {
 			String[] input = sc.nextLine().split(" ");
 			if(input[0].equals("BE")) {
-				bst.getbe(Double.parseDouble(input[1]), Double.parseDouble(input[2]));
+				bst.getbe(Double.parseDouble(input[1]),
+				 Double.parseDouble(input[2]));
 			} else if(input[0].equals("LE")) {
 				bst.getle(Double.parseDouble(input[1]));
 			} else {
