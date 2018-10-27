@@ -1,26 +1,60 @@
 import java.util.Scanner;
 import java.util.HashMap;
+/**
+ * Class for student.
+ */
 class Student {
-	//private Integer rollnumber;
+	/**
+	 * studnet name.
+	 */
 	private String name;
+	/**
+	 * student marks.
+	 */
 	private Double totalmarks;
-	Student(String n, Double t) {
-		//this.rollnumber = r;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      n     { parameter_description }
+	 * @param      t     { parameter_description }
+	 */
+	Student(final String n, final Double t) {
 		this.name = n;
 		this.totalmarks = t;
 	}
-	/*Integer getrollnumber() {
-		return this.rollnumber;
-	}*/
+	/**
+	 * gets name.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	String getname() {
 		return this.name;
 	}
+	/**
+	 * gets marks.
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	Double gettotalmarks() {
 		return this.totalmarks;
 	}
 }
-class Solution {
-	public static void main(String[] args) {
+/**
+ * Class for solution.
+ */
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+		//unsed.
+	}
+	/**
+	 * main.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 		HashMap<Integer, Student> h = new HashMap<Integer, Student>(n);
