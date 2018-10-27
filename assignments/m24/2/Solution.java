@@ -158,7 +158,7 @@ class BinarySearchTree {
   
         /* if root's data lies in range, then prints root's data */
         if (k1 <= x.key.gettotal() && k2 >= x.key.gettotal()) { 
-            System.out.println(x.value + " "); 
+            System.out.println(x.value); 
         } 
   
         /* If root->data is smaller than k2, then only we can get o/p keys 
