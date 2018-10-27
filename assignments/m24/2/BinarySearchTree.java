@@ -146,6 +146,16 @@ public class BinarySearchTree {
         }
         return x;
     }
+    /**
+     * get.
+     * best case: log(N)
+     * worst case: O(n)
+     * Average case: logN
+     *
+     * @param      x     { parameter_description }
+     * @param      k1    The k 1
+     * @param      k2    The k 2
+     */
     void get(final Node x, final Double k1, final Double k2) { 
         if (x == null) { 
             return; 

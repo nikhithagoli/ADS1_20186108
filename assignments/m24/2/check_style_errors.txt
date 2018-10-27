@@ -1,11 +1,4 @@
 Starting audit...
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:22:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:24: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:28:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:30:27: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:33:34: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:38: Line has trailing spaces. [RegexpSingleline]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\2\Solution.java:25:23: ',' is not followed by whitespace. [WhitespaceAfter]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 1 errors.
