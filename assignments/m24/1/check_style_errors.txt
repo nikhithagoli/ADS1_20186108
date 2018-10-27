@@ -1,0 +1,21 @@
+Starting audit...
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:3: Missing a Javadoc comment. [JavadocType]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:4:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:5:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:6:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:7:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:7:17: Parameter n should be final. [FinalParameters]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:7:27: Parameter t should be final. [FinalParameters]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:15:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:18:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:22: Missing a Javadoc comment. [JavadocType]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:22:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:23:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:23:33: Parameter args should be final. [FinalParameters]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:27:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:29: Line is longer than 80 characters (found 111). [LineLength]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:32:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:35:27: 'if' is not followed by whitespace. [WhitespaceAfter]
+Audit done.
+Checkstyle ends with 18 errors.
