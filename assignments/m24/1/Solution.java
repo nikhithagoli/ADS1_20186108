@@ -32,11 +32,16 @@ class Solution {
 		for(int i = 0; i < m; i++) {
 			String[] input = sc.nextLine().split(" ");
 			Student s = h.get(Integer.parseInt(input[1]));
-			if(input[2].equals("1")) {
-				System.out.println(s.getname());
+			if(s == null){
+				System.out.println("Student doesn't exists...");
 			} else {
-				System.out.println(s.gettotalmarks());
+				if(input[2].equals("1")) {
+					System.out.println(s.getname());
+				} else {
+					System.out.println(s.gettotalmarks());
+				}
 			}
+			
 		}
 	}
 }

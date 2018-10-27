@@ -13,9 +13,12 @@ Starting audit...
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:22:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:23:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:23:33: Parameter args should be final. [FinalParameters]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:27:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:27:20: 'for' is not followed by whitespace. [WhitespaceAround]
 [ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:29: Line is longer than 80 characters (found 111). [LineLength]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:32:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:35:27: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:32:20: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:35:27: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:35:38: '{' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:38:35: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] E:\basic\ADS1_20186108\assignments\m24\1\Solution.java:44: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 21 errors.
